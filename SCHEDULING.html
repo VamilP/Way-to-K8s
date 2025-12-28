@@ -1,0 +1,627 @@
+<!DOCTYPE html><html><head>
+      <title>SCHEDULING</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\vamil\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="️-scheduling--resource-management">⚙️ Scheduling &amp; Resource Management </h1>
+<blockquote>
+<p><strong>Understanding Resource Limits, QoS, Affinity, Taints, and Pod Scheduling</strong></p>
+</blockquote>
+<hr>
+<h2 id="-learning-objectives">🎯 Learning Objectives </h2>
+<p>By the end of this section, you will:</p>
+<ul>
+<li>Understand how the scheduler works</li>
+<li>Master resource requests and limits</li>
+<li>Know QoS classes (Guaranteed, Burstable, BestEffort)</li>
+<li>Configure node selectors and affinity</li>
+<li>Use taints and tolerations</li>
+<li>Understand Pod disruption budgets</li>
+</ul>
+<hr>
+<h2 id="-how-the-scheduler-works">🧠 How the Scheduler Works </h2>
+<h3 id="scheduler-process">Scheduler Process </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────┐
+│           SCHEDULER DECISION PROCESS                │
+│                                                       │
+│  1. Filter Phase (Can it run?)                       │
+│     - Resource availability                          │
+│     - Node selectors                                 │
+│     - Taints/tolerations                             │
+│     - Affinity rules                                 │
+│                                                       │
+│  2. Score Phase (Which is best?)                     │
+│     - Resource balance                               │
+│     - Affinity preferences                           │
+│     - Anti-affinity preferences                      │
+│                                                       │
+│  3. Bind Phase (Assign to node)                      │
+│     - Update Pod spec with node                      │
+│     - kubelet starts Pod                             │
+└─────────────────────────────────────────────────────┘
+</code></pre><h3 id="scheduler-flow">Scheduler Flow </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Pod Created (no node assigned)
+    ↓
+Scheduler watches for unscheduled Pods
+    ↓
+Filter nodes (which can run this Pod?)
+    ↓
+Score nodes (which is best?)
+    ↓
+Select highest-scoring node
+    ↓
+Bind Pod to node
+    ↓
+kubelet starts Pod
+</code></pre><hr>
+<h2 id="-resource-requests--limits">💾 Resource Requests &amp; Limits </h2>
+<h3 id="why-resource-management">Why Resource Management? </h3>
+<p><strong>Problem:</strong> Containers can consume all node resources, starving other Pods.</p>
+<p><strong>Solution:</strong> Resource requests and limits.</p>
+<h3 id="requests-vs-limits">Requests vs Limits </h3>
+<p><strong>Request</strong> = Guaranteed minimum resources.</p>
+<p><strong>Limit</strong> = Maximum resources allowed.</p>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app<span class="token punctuation">:</span><span class="token number">1.0</span>
+    <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+      <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"64Mi"</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"250m"</span>      <span class="token comment"># 0.25 CPU</span>
+      <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"128Mi"</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"500m"</span>      <span class="token comment"># 0.5 CPU</span>
+</code></pre><h3 id="cpu-units">CPU Units </h3>
+<ul>
+<li><code>1</code> = 1 CPU core</li>
+<li><code>1000m</code> = 1 CPU core</li>
+<li><code>500m</code> = 0.5 CPU core</li>
+<li><code>250m</code> = 0.25 CPU core</li>
+</ul>
+<h3 id="memory-units">Memory Units </h3>
+<ul>
+<li><code>1Gi</code> = 1024 MiB</li>
+<li><code>1G</code> = 1000 MB (decimal)</li>
+<li><code>128Mi</code> = 128 MiB</li>
+<li><code>512M</code> = 512 MB (decimal)</li>
+</ul>
+<h3 id="what-happens-when-limits-are-exceeded">What Happens When Limits Are Exceeded? </h3>
+<p><strong>CPU:</strong></p>
+<ul>
+<li>Throttled (slowed down)</li>
+<li>Pod continues running</li>
+</ul>
+<p><strong>Memory:</strong></p>
+<ul>
+<li><strong>OOMKilled</strong> (Out Of Memory)</li>
+<li>Pod terminated and restarted</li>
+</ul>
+<hr>
+<h2 id="️-quality-of-service-qos-classes">🏷️ Quality of Service (QoS) Classes </h2>
+<p>Kubernetes assigns <strong>QoS classes</strong> based on resource configuration.</p>
+<h3 id="1-guaranteed">1. Guaranteed </h3>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>All containers have <strong>requests = limits</strong></li>
+<li>Requests and limits set for <strong>both</strong> CPU and memory</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">resources</span><span class="token punctuation">:</span>
+  <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"64Mi"</span>
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"250m"</span>
+  <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"64Mi"</span>
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"250m"</span>
+</code></pre><p><strong>Priority:</strong> Highest (last to be evicted)</p>
+<h3 id="2-burstable">2. Burstable </h3>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>At least one container has requests &lt; limits</li>
+<li>Or requests set but limits not set</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">resources</span><span class="token punctuation">:</span>
+  <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"64Mi"</span>
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"250m"</span>
+  <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+    <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"128Mi"</span>
+    <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"500m"</span>
+</code></pre><p><strong>Priority:</strong> Medium</p>
+<h3 id="3-besteffort">3. BestEffort </h3>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li><strong>No</strong> requests or limits set</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># No resources section</span>
+</code></pre><p><strong>Priority:</strong> Lowest (first to be evicted)</p>
+<h3 id="qos-eviction-order">QoS Eviction Order </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Node runs out of resources
+    ↓
+1. BestEffort Pods evicted first
+    ↓
+2. Burstable Pods evicted (if needed)
+    ↓
+3. Guaranteed Pods evicted last (only if critical)
+</code></pre><hr>
+<h2 id="-node-selectors">🎯 Node Selectors </h2>
+<h3 id="simple-node-selection">Simple Node Selection </h3>
+<p><strong>Purpose:</strong> Schedule Pods on specific nodes.</p>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">nodeSelector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">disktype</span><span class="token punctuation">:</span> ssd
+    <span class="token key atrule">zone</span><span class="token punctuation">:</span> us<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app<span class="token punctuation">:</span><span class="token number">1.0</span>
+</code></pre><p><strong>Node Labels:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Label node</span>
+kubectl label nodes node-1 <span class="token assign-left variable">disktype</span><span class="token operator">=</span>ssd <span class="token assign-left variable">zone</span><span class="token operator">=</span>us-west-1
+
+<span class="token comment"># Verify</span>
+kubectl get nodes --show-labels
+</code></pre><hr>
+<h2 id="-node-affinity">🔗 Node Affinity </h2>
+<h3 id="what-is-affinity">What is Affinity? </h3>
+<p><strong>Affinity</strong> = Advanced scheduling rules (preferred vs required).</p>
+<h3 id="types-of-affinity">Types of Affinity </h3>
+<ol>
+<li>
+<p><strong>Required</strong> (<code>requiredDuringSchedulingIgnoredDuringExecution</code>)</p>
+<ul>
+<li>Must match (hard requirement)</li>
+</ul>
+</li>
+<li>
+<p><strong>Preferred</strong> (<code>preferredDuringSchedulingIgnoredDuringExecution</code>)</p>
+<ul>
+<li>Should match (soft preference)</li>
+</ul>
+</li>
+</ol>
+<h3 id="node-affinity-example">Node Affinity Example </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">affinity</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nodeAffinity</span><span class="token punctuation">:</span>
+      <span class="token key atrule">requiredDuringSchedulingIgnoredDuringExecution</span><span class="token punctuation">:</span>
+        <span class="token key atrule">nodeSelectorTerms</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">matchExpressions</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> disktype
+            <span class="token key atrule">operator</span><span class="token punctuation">:</span> In
+            <span class="token key atrule">values</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> ssd
+            <span class="token punctuation">-</span> nvme
+      <span class="token key atrule">preferredDuringSchedulingIgnoredDuringExecution</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">100</span>
+        <span class="token key atrule">preference</span><span class="token punctuation">:</span>
+          <span class="token key atrule">matchExpressions</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> zone
+            <span class="token key atrule">operator</span><span class="token punctuation">:</span> In
+            <span class="token key atrule">values</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> us<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app<span class="token punctuation">:</span><span class="token number">1.0</span>
+</code></pre><p><strong>Operators:</strong></p>
+<ul>
+<li><code>In</code> - Value in list</li>
+<li><code>NotIn</code> - Value not in list</li>
+<li><code>Exists</code> - Key exists</li>
+<li><code>DoesNotExist</code> - Key doesn't exist</li>
+<li><code>Gt</code> - Greater than (for numeric)</li>
+<li><code>Lt</code> - Less than (for numeric)</li>
+</ul>
+<hr>
+<h2 id="-pod-affinity--anti-affinity">🔄 Pod Affinity &amp; Anti-Affinity </h2>
+<h3 id="pod-affinity">Pod Affinity </h3>
+<p><strong>Purpose:</strong> Schedule Pods <strong>near</strong> other Pods.</p>
+<p><strong>Use Case:</strong> Co-locate related Pods for performance.</p>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">affinity</span><span class="token punctuation">:</span>
+    <span class="token key atrule">podAffinity</span><span class="token punctuation">:</span>
+      <span class="token key atrule">requiredDuringSchedulingIgnoredDuringExecution</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">labelSelector</span><span class="token punctuation">:</span>
+          <span class="token key atrule">matchExpressions</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> app
+            <span class="token key atrule">operator</span><span class="token punctuation">:</span> In
+            <span class="token key atrule">values</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> database
+        <span class="token key atrule">topologyKey</span><span class="token punctuation">:</span> zone
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app<span class="token punctuation">:</span><span class="token number">1.0</span>
+</code></pre><p><strong>Meaning:</strong> Schedule on same zone as database Pods.</p>
+<h3 id="pod-anti-affinity">Pod Anti-Affinity </h3>
+<p><strong>Purpose:</strong> Schedule Pods <strong>away from</strong> other Pods.</p>
+<p><strong>Use Case:</strong> High availability (spread across nodes/zones).</p>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">affinity</span><span class="token punctuation">:</span>
+        <span class="token key atrule">podAntiAffinity</span><span class="token punctuation">:</span>
+          <span class="token key atrule">requiredDuringSchedulingIgnoredDuringExecution</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">labelSelector</span><span class="token punctuation">:</span>
+              <span class="token key atrule">matchExpressions</span><span class="token punctuation">:</span>
+              <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> app
+                <span class="token key atrule">operator</span><span class="token punctuation">:</span> In
+                <span class="token key atrule">values</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> web
+            <span class="token key atrule">topologyKey</span><span class="token punctuation">:</span> kubernetes.io/hostname
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+</code></pre><p><strong>Meaning:</strong> Don't schedule multiple web Pods on same node.</p>
+<hr>
+<h2 id="-taints--tolerations">🚫 Taints &amp; Tolerations </h2>
+<h3 id="what-are-taints">What are Taints? </h3>
+<p><strong>Taint</strong> = Mark on node that <strong>repels</strong> Pods (unless tolerated).</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Dedicated nodes (GPU, special hardware)</li>
+<li>Node maintenance</li>
+<li>Preventing Pods from scheduling</li>
+</ul>
+<h3 id="taint-format">Taint Format </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>key=value:effect
+</code></pre><p><strong>Effects:</strong></p>
+<ul>
+<li><code>NoSchedule</code> - Don't schedule new Pods</li>
+<li><code>PreferNoSchedule</code> - Prefer not to schedule</li>
+<li><code>NoExecute</code> - Evict existing Pods</li>
+</ul>
+<h3 id="tainting-a-node">Tainting a Node </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Taint node</span>
+kubectl taint nodes node-1 <span class="token assign-left variable">key</span><span class="token operator">=</span>value:NoSchedule
+
+<span class="token comment"># Remove taint</span>
+kubectl taint nodes node-1 <span class="token assign-left variable">key</span><span class="token operator">=</span>value:NoSchedule-
+</code></pre><h3 id="tolerations">Tolerations </h3>
+<p><strong>Toleration</strong> = Allows Pod to be scheduled on tainted node.</p>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">tolerations</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"key"</span>
+    <span class="token key atrule">operator</span><span class="token punctuation">:</span> <span class="token string">"Equal"</span>
+    <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token string">"value"</span>
+    <span class="token key atrule">effect</span><span class="token punctuation">:</span> <span class="token string">"NoSchedule"</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>app<span class="token punctuation">:</span><span class="token number">1.0</span>
+</code></pre><p><strong>Operators:</strong></p>
+<ul>
+<li><code>Equal</code> - Exact match</li>
+<li><code>Exists</code> - Key exists (ignore value)</li>
+</ul>
+<h3 id="common-use-case-dedicated-gpu-nodes">Common Use Case: Dedicated GPU Nodes </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Taint GPU nodes</span>
+kubectl taint nodes gpu-node-1 nvidia.com/gpu<span class="token operator">=</span>true:NoSchedule
+</code></pre><pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># Pod with GPU toleration</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> gpu<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">tolerations</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">"nvidia.com/gpu"</span>
+    <span class="token key atrule">operator</span><span class="token punctuation">:</span> <span class="token string">"Exists"</span>
+    <span class="token key atrule">effect</span><span class="token punctuation">:</span> <span class="token string">"NoSchedule"</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> gpu<span class="token punctuation">-</span>app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> gpu<span class="token punctuation">-</span>app<span class="token punctuation">:</span><span class="token number">1.0</span>
+</code></pre><hr>
+<h2 id="️-pod-disruption-budgets-pdb">🛡️ Pod Disruption Budgets (PDB) </h2>
+<h3 id="what-is-a-pdb">What is a PDB? </h3>
+<p><strong>PDB</strong> = Limits number of Pods that can be disrupted simultaneously.</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Ensure minimum availability during updates</li>
+<li>Prevent too many Pods from being evicted</li>
+</ul>
+<h3 id="pdb-example">PDB Example </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> policy/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PodDisruptionBudget
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> web<span class="token punctuation">-</span>pdb
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">minAvailable</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> web
+</code></pre><p><strong>Alternatives:</strong></p>
+<ul>
+<li><code>minAvailable</code> - Minimum Pods available</li>
+<li><code>maxUnavailable</code> - Maximum Pods unavailable</li>
+</ul>
+<p><strong>Example with maxUnavailable:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> policy/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PodDisruptionBudget
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> web<span class="token punctuation">-</span>pdb
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">maxUnavailable</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> web
+</code></pre><hr>
+<h2 id="-scheduling-decision-diagram">📊 Scheduling Decision Diagram </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────┐
+│              POD CREATED                             │
+└──────────────────┬───────────────────────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────────────────────┐
+│           FILTER PHASE                                │
+│                                                       │
+│  Check each node:                                     │
+│  ✅ Resources available?                              │
+│  ✅ Node selectors match?                             │
+│  ✅ Taints tolerated?                                 │
+│  ✅ Affinity rules satisfied?                        │
+│                                                       │
+│  Result: List of candidate nodes                     │
+└──────────────────┬───────────────────────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────────────────────┐
+│            SCORE PHASE                                │
+│                                                       │
+│  Score each candidate node:                          │
+│  - Resource balance (higher = better)                │
+│  - Affinity preferences                               │
+│  - Anti-affinity preferences                          │
+│                                                       │
+│  Result: Ranked nodes                                │
+└──────────────────┬───────────────────────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────────────────────┐
+│            BIND PHASE                                │
+│                                                       │
+│  Select highest-scoring node                          │
+│  Update Pod spec with node assignment                 │
+│  kubelet starts Pod                                   │
+└─────────────────────────────────────────────────────┘
+</code></pre><hr>
+<h2 id="-hands-on-labs">🧪 Hands-On Labs </h2>
+<h3 id="lab-1-resource-requests-and-limits">Lab 1: Resource Requests and Limits </h3>
+<p><strong>Create Pod with resources:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> resource<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+      <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"64Mi"</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"250m"</span>
+      <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> <span class="token string">"128Mi"</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> <span class="token string">"500m"</span>
+</code></pre><p><strong>Apply and check:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> pod.yaml
+kubectl describe pod resource-pod <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">5</span> Requests
+kubectl <span class="token function">top</span> pod resource-pod
+</code></pre><h3 id="lab-2-node-selector">Lab 2: Node Selector </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Label node</span>
+kubectl label nodes <span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span> <span class="token assign-left variable">disktype</span><span class="token operator">=</span>ssd
+
+<span class="token comment"># Create Pod with node selector</span>
+kubectl run app <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx <span class="token parameter variable">--overrides</span><span class="token operator">=</span><span class="token string">'
+{
+  "spec": {
+    "nodeSelector": {
+      "disktype": "ssd"
+    }
+  }
+}'</span>
+
+<span class="token comment"># Verify Pod is on correct node</span>
+kubectl get pod app <span class="token parameter variable">-o</span> wide
+</code></pre><h3 id="lab-3-node-affinity">Lab 3: Node Affinity </h3>
+<p><strong>Create Pod with affinity:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> affinity<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">affinity</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nodeAffinity</span><span class="token punctuation">:</span>
+      <span class="token key atrule">requiredDuringSchedulingIgnoredDuringExecution</span><span class="token punctuation">:</span>
+        <span class="token key atrule">nodeSelectorTerms</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">matchExpressions</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> zone
+            <span class="token key atrule">operator</span><span class="token punctuation">:</span> In
+            <span class="token key atrule">values</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> us<span class="token punctuation">-</span>west<span class="token punctuation">-</span><span class="token number">1</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+</code></pre><p><strong>Apply:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> pod.yaml
+kubectl describe pod affinity-pod <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> Affinity
+</code></pre><h3 id="lab-4-pod-anti-affinity">Lab 4: Pod Anti-Affinity </h3>
+<p><strong>Create Deployment with anti-affinity:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> web
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> web
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">affinity</span><span class="token punctuation">:</span>
+        <span class="token key atrule">podAntiAffinity</span><span class="token punctuation">:</span>
+          <span class="token key atrule">requiredDuringSchedulingIgnoredDuringExecution</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> <span class="token key atrule">labelSelector</span><span class="token punctuation">:</span>
+              <span class="token key atrule">matchExpressions</span><span class="token punctuation">:</span>
+              <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> app
+                <span class="token key atrule">operator</span><span class="token punctuation">:</span> In
+                <span class="token key atrule">values</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> web
+            <span class="token key atrule">topologyKey</span><span class="token punctuation">:</span> kubernetes.io/hostname
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+</code></pre><p><strong>Apply and verify:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> deployment.yaml
+kubectl get pods <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>web <span class="token parameter variable">-o</span> wide
+<span class="token comment"># Verify Pods are on different nodes</span>
+</code></pre><h3 id="lab-5-taints-and-tolerations">Lab 5: Taints and Tolerations </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Taint node</span>
+kubectl taint nodes <span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span> <span class="token assign-left variable">special</span><span class="token operator">=</span>true:NoSchedule
+
+<span class="token comment"># Create Pod without toleration (won't schedule)</span>
+kubectl run test1 <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># Create Pod with toleration (will schedule)</span>
+kubectl run test2 <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx <span class="token parameter variable">--overrides</span><span class="token operator">=</span><span class="token string">'
+{
+  "spec": {
+    "tolerations": [
+      {
+        "key": "special",
+        "operator": "Equal",
+        "value": "true",
+        "effect": "NoSchedule"
+      }
+    ]
+  }
+}'</span>
+
+<span class="token comment"># Verify</span>
+kubectl get pods <span class="token parameter variable">-o</span> wide
+</code></pre><h3 id="lab-6-pod-disruption-budget">Lab 6: Pod Disruption Budget </h3>
+<p><strong>Create PDB:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> policy/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PodDisruptionBudget
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> web<span class="token punctuation">-</span>pdb
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">minAvailable</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> web
+</code></pre><p><strong>Apply:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> pdb.yaml
+kubectl get pdb
+</code></pre><hr>
+<h2 id="-troubleshooting-scheduling">🐛 Troubleshooting Scheduling </h2>
+<h3 id="pod-stuck-in-pending">Pod Stuck in Pending </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check Pod events</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Common issues:</span>
+<span class="token comment"># - Insufficient resources</span>
+<span class="token comment"># - No nodes match selectors/affinity</span>
+<span class="token comment"># - Taints not tolerated</span>
+<span class="token comment"># - Node selector mismatch</span>
+</code></pre><h3 id="check-node-resources">Check Node Resources </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Node capacity and allocatable</span>
+kubectl describe <span class="token function">node</span> <span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> <span class="token string">"Allocated resources"</span>
+
+<span class="token comment"># Check resource usage</span>
+kubectl <span class="token function">top</span> <span class="token function">node</span> <span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span>
+</code></pre><h3 id="check-scheduling-events">Check Scheduling Events </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># View scheduler logs (on control plane)</span>
+kubectl logs <span class="token parameter variable">-n</span> kube-system kube-scheduler-<span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span>
+</code></pre><hr>
+<h2 id="-key-takeaways">🎓 Key Takeaways </h2>
+<ol>
+<li><strong>Scheduler</strong> = Filters → Scores → Binds</li>
+<li><strong>Requests</strong> = Guaranteed minimum</li>
+<li><strong>Limits</strong> = Maximum allowed</li>
+<li><strong>QoS Classes</strong> = Guaranteed, Burstable, BestEffort</li>
+<li><strong>Node Selectors</strong> = Simple node selection</li>
+<li><strong>Affinity</strong> = Advanced scheduling rules</li>
+<li><strong>Anti-Affinity</strong> = Spread Pods apart</li>
+<li><strong>Taints</strong> = Repel Pods from nodes</li>
+<li><strong>Tolerations</strong> = Allow Pods on tainted nodes</li>
+<li><strong>PDB</strong> = Limit disruptions for availability</li>
+</ol>
+<hr>
+<h2 id="-next-steps">🔗 Next Steps </h2>
+<p>Now that you understand scheduling, let's learn about <strong>Security &amp; RBAC</strong>:</p>
+<p>👉 <strong><a href="./SECURITY.md">Security &amp; RBAC</a></strong> - Authentication, authorization, and access control</p>
+<hr>
+<h2 id="-additional-resources">📚 Additional Resources </h2>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/">Scheduler Documentation</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource Management</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/pods/disruptions/">Pod Disruption Budgets</a></li>
+</ul>
+<hr>
+<p><strong>Congratulations! You understand scheduling. Ready to learn security? 🚀</strong></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

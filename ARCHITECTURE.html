@@ -1,0 +1,523 @@
+<!DOCTYPE html><html><head>
+      <title>ARCHITECTURE</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\vamil\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="️-kubernetes-architecture-deep-dive">🏗️ Kubernetes Architecture Deep Dive </h1>
+<blockquote>
+<p><strong>Understanding How Kubernetes Works Internally: Control Plane, Worker Nodes, and Components</strong></p>
+</blockquote>
+<hr>
+<h2 id="-learning-objectives">🎯 Learning Objectives </h2>
+<p>By the end of this section, you will:</p>
+<ul>
+<li>Understand Control Plane vs Worker Nodes</li>
+<li>Know each component's role and responsibilities</li>
+<li>Understand the request flow (kubectl → API → etcd)</li>
+<li>Understand control loops and reconciliation</li>
+<li>Be able to troubleshoot component-level issues</li>
+</ul>
+<hr>
+<h2 id="-high-level-architecture">🧠 High-Level Architecture </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────────────────┐
+│                    KUBERNETES CLUSTER                            │
+│                                                                   │
+│  ┌───────────────────────────────────────────────────────────┐  │
+│  │              CONTROL PLANE (Master Node)                   │  │
+│  │                                                             │  │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │  │
+│  │  │ kube-apiserver│  │    etcd      │  │ kube-scheduler│  │  │
+│  │  │              │  │  (Database)  │  │              │   │  │
+│  │  │  - API Server│  │  - State     │  │  - Scheduling│   │  │
+│  │  │  - Gateway   │  │  - Config    │  │  - Decisions │   │  │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘   │  │
+│  │                                                             │  │
+│  │  ┌──────────────┐  ┌──────────────┐                       │  │
+│  │  │ kube-controller│ │ cloud-controller│                    │  │
+│  │  │ -manager     │  │ -manager     │                       │  │
+│  │  │  - Reconcile │  │  - Cloud     │                       │  │
+│  │  │  - Control   │  │  - Integrate │                       │  │
+│  │  └──────────────┘  └──────────────┘                       │  │
+│  └───────────────────────────────────────────────────────────┘  │
+│                                                                   │
+│  ┌───────────────────────────────────────────────────────────┐  │
+│  │              WORKER NODES (Minions)                        │  │
+│  │                                                             │  │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │  │
+│  │  │   kubelet    │  │  kube-proxy  │  │   Container   │   │  │
+│  │  │              │  │              │  │   Runtime     │   │  │
+│  │  │  - Pod mgmt  │  │  - Networking│  │  - containerd│   │  │
+│  │  │  - Health    │  │  - Services  │  │  - CRI-O     │   │  │
+│  │  │  - Reports   │  │  - iptables  │  │  - Docker    │   │  │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘   │  │
+│  │                                                             │  │
+│  │  ┌─────────────────────────────────────────────────────┐  │  │
+│  │  │              PODS (Your Workloads)                    │  │  │
+│  │  │  ┌──────────┐  ┌──────────┐  ┌──────────┐         │  │  │
+│  │  │  │ Container│  │ Container│  │ Container│         │  │  │
+│  │  │  └──────────┘  └──────────┘  └──────────┘         │  │  │
+│  │  └─────────────────────────────────────────────────────┘  │  │
+│  └───────────────────────────────────────────────────────────┘  │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre><hr>
+<h2 id="️-control-plane-components">🎛️ Control Plane Components </h2>
+<p>The Control Plane is the <strong>"brain"</strong> of Kubernetes. It makes all decisions and maintains cluster state.</p>
+<h3 id="1-kube-apiserver">1. kube-apiserver </h3>
+<p><strong>Role:</strong> The front-end API server for Kubernetes.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Exposes Kubernetes API (REST API)</li>
+<li>Validates and processes API requests</li>
+<li>Authenticates and authorizes requests</li>
+<li>Writes to etcd</li>
+<li>Serves as the only component that talks to etcd</li>
+</ul>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Single source of truth for API</li>
+<li>Stateless (can run multiple instances)</li>
+<li>All components communicate through API server</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌──────────┐     ┌──────────────┐     ┌──────────┐
+│ kubectl  │────▶│ kube-apiserver│────▶│   etcd   │
+│ (client) │     │              │     │ (state)  │
+└──────────┘     └──────────────┘     └──────────┘
+</code></pre><p><strong>Example Request Flow:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl get pods
+  ↓
+kube-apiserver <span class="token punctuation">(</span>validates request<span class="token punctuation">)</span>
+  ↓
+etcd <span class="token punctuation">(</span>reads pod data<span class="token punctuation">)</span>
+  ↓
+kube-apiserver <span class="token punctuation">(</span>returns response<span class="token punctuation">)</span>
+  ↓
+kubectl <span class="token punctuation">(</span>displays pods<span class="token punctuation">)</span>
+</code></pre><h3 id="2-etcd">2. etcd </h3>
+<p><strong>Role:</strong> Distributed key-value store (Kubernetes' database).</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Stores all cluster state</li>
+<li>Stores configuration data</li>
+<li>Stores secrets (encrypted at rest)</li>
+<li>Provides watch API for changes</li>
+</ul>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Only kube-apiserver writes to etcd</li>
+<li>Highly available (typically 3 or 5 nodes)</li>
+<li>All cluster data lives here</li>
+</ul>
+<p><strong>What's Stored:</strong></p>
+<ul>
+<li>Pod definitions</li>
+<li>Service definitions</li>
+<li>ConfigMaps</li>
+<li>Secrets</li>
+<li>Node information</li>
+<li>Cluster state</li>
+</ul>
+<p><strong>⚠️ Important:</strong> etcd is critical. If it's lost, cluster state is lost!</p>
+<h3 id="3-kube-scheduler">3. kube-scheduler </h3>
+<p><strong>Role:</strong> Assigns Pods to Nodes.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Watches for newly created Pods (no assigned node)</li>
+<li>Selects a node for each Pod</li>
+<li>Considers resource requirements, constraints, affinity</li>
+</ul>
+<p><strong>Scheduling Process:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1. Filter nodes (which nodes can run this Pod?)
+   - Resource availability (CPU, memory)
+   - Node selectors
+   - Taints/tolerations
+   - Affinity rules
+
+2. Score nodes (which node is best?)
+   - Resource balance
+   - Affinity preferences
+   - Anti-affinity preferences
+
+3. Bind Pod to selected node
+</code></pre><p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Pod created → Scheduler evaluates nodes → Assigns to Node-2
+</code></pre><h3 id="4-kube-controller-manager">4. kube-controller-manager </h3>
+<p><strong>Role:</strong> Runs controller processes (control loops).</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Maintains desired state</li>
+<li>Reconciles current state with desired state</li>
+<li>Runs multiple controllers</li>
+</ul>
+<p><strong>Controllers Include:</strong></p>
+<ul>
+<li><strong>Deployment Controller</strong>: Maintains desired replicas</li>
+<li><strong>ReplicaSet Controller</strong>: Ensures correct number of Pods</li>
+<li><strong>Node Controller</strong>: Monitors node health</li>
+<li><strong>Job Controller</strong>: Manages Jobs</li>
+<li><strong>Namespace Controller</strong>: Manages namespaces</li>
+<li><strong>ServiceAccount Controller</strong>: Manages service accounts</li>
+</ul>
+<p><strong>Control Loop Pattern:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1. Observe current state
+2. Compare with desired state
+3. Take action to reconcile
+4. Repeat
+</code></pre><p><strong>Example - Deployment Controller:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Desired: 3 replicas
+Current: 2 replicas
+Action: Create 1 more Pod
+</code></pre><h3 id="5-cloud-controller-manager">5. cloud-controller-manager </h3>
+<p><strong>Role:</strong> Integrates with cloud provider APIs.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Node controller (cloud-specific)</li>
+<li>Route controller (cloud load balancers)</li>
+<li>Service controller (cloud load balancers)</li>
+<li>Volume controller (cloud storage)</li>
+</ul>
+<p><strong>Key Point:</strong> Only runs if using a cloud provider (GCP, AWS, Azure).</p>
+<hr>
+<h2 id="-worker-node-components">🔧 Worker Node Components </h2>
+<p>Worker Nodes are the <strong>"muscles"</strong> that run your workloads.</p>
+<h3 id="1-kubelet">1. kubelet </h3>
+<p><strong>Role:</strong> Node agent that communicates with Control Plane.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Registers node with cluster</li>
+<li>Watches for Pod assignments</li>
+<li>Starts/stops containers via Container Runtime</li>
+<li>Reports Pod and node status to API server</li>
+<li>Executes liveness/readiness probes</li>
+<li>Mounts volumes</li>
+</ul>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li>Runs on every node</li>
+<li>Primary interface between node and cluster</li>
+<li>Ensures containers are running as specified</li>
+</ul>
+<p><strong>kubelet Workflow:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1. kubelet receives Pod spec from API server
+2. Pulls container image
+3. Creates Pod (network namespace, volumes)
+4. Starts containers via Container Runtime
+5. Monitors Pod health
+6. Reports status back to API server
+</code></pre><h3 id="2-kube-proxy">2. kube-proxy </h3>
+<p><strong>Role:</strong> Network proxy and load balancer.</p>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Maintains network rules on nodes</li>
+<li>Enables Service abstraction (ClusterIP, NodePort, LoadBalancer)</li>
+<li>Implements load balancing</li>
+<li>Uses iptables or IPVS</li>
+</ul>
+<p><strong>How It Works:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Service created → kube-proxy creates iptables rules → Traffic routed to Pods
+</code></pre><p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Service "my-app" → ClusterIP: 10.96.0.1
+kube-proxy creates rule:
+  Traffic to 10.96.0.1 → Forward to Pod IPs (10.244.1.2, 10.244.1.3)
+</code></pre><h3 id="3-container-runtime">3. Container Runtime </h3>
+<p><strong>Role:</strong> Runs containers.</p>
+<p><strong>Common Runtimes:</strong></p>
+<ul>
+<li><strong>containerd</strong> (default, recommended)</li>
+<li><strong>CRI-O</strong></li>
+<li><strong>Docker</strong> (deprecated, uses containerd)</li>
+</ul>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+<li>Pulling container images</li>
+<li>Starting/stopping containers</li>
+<li>Managing container lifecycle</li>
+</ul>
+<p><strong>Interface:</strong> Uses <strong>CRI (Container Runtime Interface)</strong></p>
+<hr>
+<h2 id="-request-flow-kubectl--cluster">🔄 Request Flow: kubectl → Cluster </h2>
+<p>Let's trace what happens when you run <code>kubectl create -f pod.yaml</code>:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌──────────┐
+│  You     │
+│ kubectl  │
+└────┬─────┘
+     │ 1. kubectl create -f pod.yaml
+     ▼
+┌─────────────────┐
+│ kube-apiserver  │
+│                 │
+│ - Validates     │
+│ - Authenticates │
+│ - Authorizes    │
+└────┬────────────┘
+     │ 2. Write Pod spec
+     ▼
+┌──────────┐
+│   etcd   │
+│          │
+│ - Stores │
+│   Pod    │
+└────┬─────┘
+     │ 3. Pod created event
+     ▼
+┌─────────────────────┐
+│ kube-scheduler      │
+│                     │
+│ - Watches for Pods  │
+│ - Selects node      │
+│ - Updates Pod spec  │
+└────┬────────────────┘
+     │ 4. Pod assigned to Node-1
+     ▼
+┌──────────┐
+│   etcd   │
+│          │
+│ - Updates│
+│   Pod    │
+└────┬─────┘
+     │ 5. Pod assignment event
+     ▼
+┌─────────────────────┐
+│ kubelet (Node-1)    │
+│                     │
+│ - Watches for Pods  │
+│ - Pulls image       │
+│ - Creates Pod       │
+│ - Starts containers │
+└────┬────────────────┘
+     │ 6. Pod status update
+     ▼
+┌─────────────────┐
+│ kube-apiserver  │
+└────┬────────────┘
+     │ 7. Status update
+     ▼
+┌──────────┐
+│   etcd   │
+│          │
+│ - Updates│
+│   status │
+└──────────┘
+</code></pre><p><strong>Timeline:</strong></p>
+<ol>
+<li><strong>0ms</strong>: You run <code>kubectl create</code></li>
+<li><strong>10ms</strong>: API server validates and writes to etcd</li>
+<li><strong>50ms</strong>: Scheduler assigns Pod to node</li>
+<li><strong>100ms</strong>: kubelet receives assignment</li>
+<li><strong>500ms</strong>: Container image pulled</li>
+<li><strong>1000ms</strong>: Pod running</li>
+</ol>
+<hr>
+<h2 id="-control-loops--reconciliation">🔁 Control Loops &amp; Reconciliation </h2>
+<p>Kubernetes uses <strong>control loops</strong> to maintain desired state.</p>
+<h3 id="example-deployment-controller">Example: Deployment Controller </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────┐
+│           CONTROL LOOP (Every few seconds)          │
+│                                                      │
+│  1. Observe: Current state = 2 Pods running         │
+│  2. Compare: Desired state = 3 Pods                 │
+│  3. Reconcile: Create 1 more Pod                    │
+│  4. Observe: Current state = 3 Pods running ✅      │
+│  5. Compare: Desired = Current ✅                   │
+│  6. No action needed                                │
+│                                                      │
+│  (If Pod crashes)                                    │
+│  1. Observe: Current state = 2 Pods (1 crashed)     │
+│  2. Compare: Desired state = 3 Pods                 │
+│  3. Reconcile: Create 1 more Pod                    │
+└─────────────────────────────────────────────────────┘
+</code></pre><p><strong>Key Concept:</strong> Kubernetes is <strong>declarative</strong>, not <strong>imperative</strong>.</p>
+<ul>
+<li>You declare <strong>what</strong> you want (3 replicas)</li>
+<li>Kubernetes figures out <strong>how</strong> to achieve it</li>
+<li>Kubernetes continuously reconciles to maintain desired state</li>
+</ul>
+<hr>
+<h2 id="️-high-availability-ha-architecture">🏗️ High Availability (HA) Architecture </h2>
+<p>For production, run <strong>multiple Control Plane nodes</strong>:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────────┐
+│              HIGH AVAILABILITY CONTROL PLANE             │
+│                                                           │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
+│  │ Master Node 1│  │ Master Node 2│  │ Master Node 3│  │
+│  │              │  │              │  │              │  │
+│  │ API Server   │  │ API Server   │  │ API Server   │  │
+│  │ Scheduler    │  │ Scheduler    │  │ Scheduler    │  │
+│  │ Controller   │  │ Controller   │  │ Controller   │  │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘  │
+│         │                 │                 │          │
+│         └─────────────────┼─────────────────┘          │
+│                           │                             │
+│                  ┌────────▼────────┐                    │
+│                  │   etcd Cluster  │                    │
+│                  │  (3 or 5 nodes) │                    │
+│                  └─────────────────┘                    │
+│                                                           │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
+│  │ Worker Node 1│  │ Worker Node 2│  │ Worker Node 3│  │
+│  └──────────────┘  └──────────────┘  └──────────────┘  │
+└─────────────────────────────────────────────────────────┘
+</code></pre><p><strong>Benefits:</strong></p>
+<ul>
+<li><strong>API Server</strong>: Load balanced (multiple instances)</li>
+<li><strong>etcd</strong>: Distributed (quorum-based)</li>
+<li><strong>Scheduler/Controller</strong>: Leader election (one active, others standby)</li>
+</ul>
+<hr>
+<h2 id="-hands-on-lab-exploring-components">🧪 Hands-On Lab: Exploring Components </h2>
+<h3 id="lab-1-check-control-plane-components">Lab 1: Check Control Plane Components </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check API server</span>
+kubectl get componentstatuses
+<span class="token comment"># or</span>
+kubectl get cs
+
+<span class="token comment"># Check API server endpoints</span>
+kubectl cluster-info
+
+<span class="token comment"># Check etcd (if accessible)</span>
+kubectl get pods <span class="token parameter variable">-n</span> kube-system <span class="token operator">|</span> <span class="token function">grep</span> etcd
+</code></pre><h3 id="lab-2-check-worker-node-components">Lab 2: Check Worker Node Components </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># List nodes</span>
+kubectl get nodes
+
+<span class="token comment"># Get node details</span>
+kubectl describe <span class="token function">node</span> <span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check kubelet status (on node)</span>
+<span class="token comment"># SSH to node and run:</span>
+systemctl status kubelet
+
+<span class="token comment"># Check kube-proxy pods</span>
+kubectl get pods <span class="token parameter variable">-n</span> kube-system <span class="token operator">|</span> <span class="token function">grep</span> kube-proxy
+</code></pre><h3 id="lab-3-watch-component-interactions">Lab 3: Watch Component Interactions </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Terminal 1: Watch Pods</span>
+kubectl get pods <span class="token parameter variable">-w</span>
+
+<span class="token comment"># Terminal 2: Create a Pod</span>
+kubectl run nginx <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># Observe:</span>
+<span class="token comment"># 1. Pod appears in "Pending" state (scheduler working)</span>
+<span class="token comment"># 2. Pod moves to "Running" state (kubelet started it)</span>
+</code></pre><h3 id="lab-4-check-scheduler-decisions">Lab 4: Check Scheduler Decisions </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Create a Pod</span>
+kubectl run test-pod <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># Check which node it was assigned to</span>
+kubectl get pod test-pod <span class="token parameter variable">-o</span> wide
+
+<span class="token comment"># Check scheduler events</span>
+kubectl describe pod test-pod <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">5</span> Events
+</code></pre><hr>
+<h2 id="-troubleshooting-component-issues">🐛 Troubleshooting Component Issues </h2>
+<h3 id="api-server-issues">API Server Issues </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li><code>kubectl</code> commands hang or fail</li>
+<li>"connection refused" errors</li>
+</ul>
+<p><strong>Debug:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check API server status</span>
+kubectl get cs
+
+<span class="token comment"># Check API server logs (on control plane node)</span>
+kubectl logs <span class="token parameter variable">-n</span> kube-system kube-apiserver-<span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span>
+</code></pre><h3 id="etcd-issues">etcd Issues </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Cluster state not updating</li>
+<li>"etcd cluster is unavailable"</li>
+</ul>
+<p><strong>Debug:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check etcd pods</span>
+kubectl get pods <span class="token parameter variable">-n</span> kube-system <span class="token operator">|</span> <span class="token function">grep</span> etcd
+
+<span class="token comment"># Check etcd health (if accessible)</span>
+etcdctl endpoint health
+</code></pre><h3 id="scheduler-issues">Scheduler Issues </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Pods stuck in "Pending" state</li>
+<li>No scheduling events</li>
+</ul>
+<p><strong>Debug:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check scheduler pod</span>
+kubectl get pods <span class="token parameter variable">-n</span> kube-system <span class="token operator">|</span> <span class="token function">grep</span> scheduler
+
+<span class="token comment"># Check scheduler logs</span>
+kubectl logs <span class="token parameter variable">-n</span> kube-system kube-scheduler-<span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check why Pod isn't scheduled</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> Events
+</code></pre><h3 id="kubelet-issues">kubelet Issues </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Pods not starting on node</li>
+<li>Node shows "NotReady"</li>
+</ul>
+<p><strong>Debug:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check node status</span>
+kubectl describe <span class="token function">node</span> <span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check kubelet logs (on node)</span>
+journalctl <span class="token parameter variable">-u</span> kubelet <span class="token parameter variable">-f</span>
+</code></pre><hr>
+<h2 id="-key-takeaways">🎓 Key Takeaways </h2>
+<ol>
+<li><strong>Control Plane</strong> = Brain (makes decisions)</li>
+<li><strong>Worker Nodes</strong> = Muscles (execute workloads)</li>
+<li><strong>kube-apiserver</strong> = Front door (all requests go through it)</li>
+<li><strong>etcd</strong> = Database (stores all state)</li>
+<li><strong>kube-scheduler</strong> = Assigns Pods to nodes</li>
+<li><strong>kube-controller-manager</strong> = Maintains desired state</li>
+<li><strong>kubelet</strong> = Node agent (runs Pods)</li>
+<li><strong>kube-proxy</strong> = Network proxy (Services)</li>
+<li><strong>Control loops</strong> = Continuous reconciliation</li>
+<li><strong>HA</strong> = Multiple Control Plane nodes for production</li>
+</ol>
+<hr>
+<h2 id="-next-steps">🔗 Next Steps </h2>
+<p>Now that you understand the architecture, let's learn about <strong>API Objects</strong>:</p>
+<p>👉 <strong><a href="./API_OBJECTS.md">API Objects &amp; kubectl</a></strong> - Understanding YAML, Resources, and the API</p>
+<hr>
+<h2 id="-additional-resources">📚 Additional Resources </h2>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/overview/components/">Kubernetes Components</a></li>
+<li><a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/">kube-apiserver</a></li>
+<li><a href="https://etcd.io/docs/">etcd Documentation</a></li>
+</ul>
+<hr>
+<p><strong>Congratulations! You understand Kubernetes architecture. Ready to work with API objects? 🚀</strong></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

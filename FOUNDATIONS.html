@@ -1,0 +1,370 @@
+<!DOCTYPE html><html><head>
+      <title>FOUNDATIONS</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="-kubernetes-foundations">🔹 Kubernetes Foundations </h1>
+<blockquote>
+<p><strong>Understanding Why Kubernetes Exists and What Problems It Solves</strong></p>
+</blockquote>
+<hr>
+<h2 id="-learning-objectives">🎯 Learning Objectives </h2>
+<p>By the end of this section, you will:</p>
+<ul>
+<li>Understand what Kubernetes is and why it exists</li>
+<li>Know the problems Kubernetes solves</li>
+<li>Understand why Docker alone is not enough</li>
+<li>Compare Kubernetes with alternatives</li>
+<li>Have a high-level mental model of Kubernetes</li>
+</ul>
+<hr>
+<h2 id="-what-is-kubernetes">🤔 What is Kubernetes? </h2>
+<p><strong>Kubernetes</strong> (often abbreviated as <strong>K8s</strong>) is an <strong>open-source container orchestration platform</strong> that automates the deployment, scaling, and management of containerized applications.</p>
+<h3 id="the-simple-analogy">The Simple Analogy </h3>
+<p>Think of Kubernetes like a <strong>smart restaurant manager</strong>:</p>
+<ul>
+<li><strong>Docker</strong> = Individual chefs cooking dishes (containers)</li>
+<li><strong>Kubernetes</strong> = The restaurant manager who:
+<ul>
+<li>Assigns chefs to stations (scheduling)</li>
+<li>Ensures enough chefs are working (scaling)</li>
+<li>Replaces chefs who get sick (self-healing)</li>
+<li>Coordinates between kitchen and dining room (networking)</li>
+<li>Manages inventory and supplies (storage)</li>
+<li>Handles customer requests (load balancing)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-problems-kubernetes-solves">🚨 Problems Kubernetes Solves </h2>
+<h3 id="problem-1-container-orchestration-at-scale">Problem 1: Container Orchestration at Scale </h3>
+<p><strong>Without Kubernetes:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>You: "I need to run 100 containers"
+You: *manually starts 100 containers*
+You: "One crashed, let me restart it manually"
+You: "Traffic increased, let me manually start 50 more"
+You: "I need to update the app, let me manually stop and restart all 100"
+</code></pre><p><strong>With Kubernetes:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>You: "I need 100 replicas"
+Kubernetes: "Done. Monitoring them. Auto-restarting failures. Scaling as needed."
+</code></pre><h3 id="problem-2-high-availability">Problem 2: High Availability </h3>
+<p><strong>Challenge:</strong> If a server crashes, your application goes down.</p>
+<p><strong>Kubernetes Solution:</strong> Automatically reschedules containers to healthy nodes.</p>
+<h3 id="problem-3-load-balancing--service-discovery">Problem 3: Load Balancing &amp; Service Discovery </h3>
+<p><strong>Challenge:</strong> Containers have dynamic IPs. How do clients find them?</p>
+<p><strong>Kubernetes Solution:</strong> Services provide stable endpoints and load balancing.</p>
+<h3 id="problem-4-rolling-updates--rollbacks">Problem 4: Rolling Updates &amp; Rollbacks </h3>
+<p><strong>Challenge:</strong> Updating an app requires downtime or complex coordination.</p>
+<p><strong>Kubernetes Solution:</strong> Zero-downtime rolling updates with automatic rollback.</p>
+<h3 id="problem-5-resource-management">Problem 5: Resource Management </h3>
+<p><strong>Challenge:</strong> Some containers need more CPU/memory. How to allocate fairly?</p>
+<p><strong>Kubernetes Solution:</strong> Resource requests and limits with intelligent scheduling.</p>
+<h3 id="problem-6-configuration--secrets-management">Problem 6: Configuration &amp; Secrets Management </h3>
+<p><strong>Challenge:</strong> Managing configs and secrets across many containers.</p>
+<p><strong>Kubernetes Solution:</strong> ConfigMaps and Secrets with centralized management.</p>
+<hr>
+<h2 id="-why-docker-alone-is-not-enough">🐳 Why Docker Alone Is Not Enough </h2>
+<h3 id="dockers-limitations">Docker's Limitations </h3>
+<p>Docker is excellent for:</p>
+<ul>
+<li>✅ Building container images</li>
+<li>✅ Running containers locally</li>
+<li>✅ Containerizing applications</li>
+</ul>
+<p>Docker is <strong>not designed</strong> for:</p>
+<ul>
+<li>❌ Managing hundreds of containers</li>
+<li>❌ Automatic scaling</li>
+<li>❌ Self-healing (restarting failed containers)</li>
+<li>❌ Load balancing across containers</li>
+<li>❌ Rolling updates</li>
+<li>❌ Service discovery</li>
+<li>❌ Multi-host networking</li>
+<li>❌ Resource scheduling</li>
+</ul>
+<h3 id="the-gap">The Gap </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Docker: "I can run containers"
+Kubernetes: "I can orchestrate thousands of containers across clusters"
+</code></pre><p><strong>Think of it this way:</strong></p>
+<ul>
+<li><strong>Docker</strong> = The engine of a car</li>
+<li><strong>Kubernetes</strong> = The entire transportation system (traffic lights, highways, GPS, maintenance)</li>
+</ul>
+<hr>
+<h2 id="-high-level-architecture-overview">📊 High-Level Architecture Overview </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────────────┐
+│                    KUBERNETES CLUSTER                        │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │              CONTROL PLANE (Master)                  │  │
+│  │                                                       │  │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐          │  │
+│  │  │ API      │  │ etcd     │  │ Scheduler│          │  │
+│  │  │ Server   │  │ (DB)     │  │          │          │  │
+│  │  └──────────┘  └──────────┘  └──────────┘          │  │
+│  │                                                       │  │
+│  │  ┌──────────┐  ┌──────────┐                         │  │
+│  │  │ Controller│  │ Cloud    │                         │  │
+│  │  │ Manager   │  │ Controller│                        │  │
+│  │  └──────────┘  └──────────┘                         │  │
+│  └──────────────────────────────────────────────────────┘  │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │              WORKER NODES                             │  │
+│  │                                                       │  │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐          │  │
+│  │  │ kubelet  │  │ kube-    │  │ Container│          │  │
+│  │  │          │  │ proxy    │  │ Runtime  │          │  │
+│  │  └──────────┘  └──────────┘  └──────────┘          │  │
+│  │                                                       │  │
+│  │  ┌──────────────────────────────────────┐           │  │
+│  │  │         PODS (Your Containers)       │           │  │
+│  │  └──────────────────────────────────────┘           │  │
+│  └──────────────────────────────────────────────────────┘  │
+│                                                               │
+└─────────────────────────────────────────────────────────────┘
+</code></pre><p><strong>Key Concepts:</strong></p>
+<ul>
+<li><strong>Control Plane</strong>: The "brain" that makes decisions</li>
+<li><strong>Worker Nodes</strong>: The "muscles" that run your containers</li>
+<li><strong>Pods</strong>: The smallest deployable unit (contains containers)</li>
+</ul>
+<hr>
+<h2 id="-kubernetes-vs-alternatives">🆚 Kubernetes vs Alternatives </h2>
+<h3 id="kubernetes-vs-docker-swarm">Kubernetes vs Docker Swarm </h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Kubernetes</th>
+<th>Docker Swarm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Higher learning curve</td>
+<td>Simpler</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Handles 1000s of nodes</td>
+<td>Good for smaller clusters</td>
+</tr>
+<tr>
+<td><strong>Ecosystem</strong></td>
+<td>Massive (CNCF)</td>
+<td>Docker-focused</td>
+</tr>
+<tr>
+<td><strong>Production Ready</strong></td>
+<td>Industry standard</td>
+<td>Good for simple use cases</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Enterprise, complex apps</td>
+<td>Small teams, simple apps</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Verdict:</strong> Kubernetes wins for production-scale deployments.</p>
+<h3 id="kubernetes-vs-virtual-machines">Kubernetes vs Virtual Machines </h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Kubernetes</th>
+<th>VMs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resource Usage</strong></td>
+<td>Lightweight (containers)</td>
+<td>Heavy (full OS)</td>
+</tr>
+<tr>
+<td><strong>Startup Time</strong></td>
+<td>Seconds</td>
+<td>Minutes</td>
+</tr>
+<tr>
+<td><strong>Isolation</strong></td>
+<td>Process-level</td>
+<td>Full OS-level</td>
+</tr>
+<tr>
+<td><strong>Orchestration</strong></td>
+<td>Built-in</td>
+<td>Requires tools</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Microservices, cloud-native</td>
+<td>Legacy apps, full OS needed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Verdict:</strong> Kubernetes is better for modern, cloud-native applications.</p>
+<h3 id="kubernetes-vs-managed-services">Kubernetes vs Managed Services </h3>
+<p><strong>Kubernetes (Self-Managed):</strong></p>
+<ul>
+<li>✅ Full control</li>
+<li>✅ Cost-effective at scale</li>
+<li>❌ You manage everything</li>
+<li>❌ Steeper learning curve</li>
+</ul>
+<p><strong>Managed Kubernetes (GKE/EKS/AKS):</strong></p>
+<ul>
+<li>✅ Managed control plane</li>
+<li>✅ Easier to get started</li>
+<li>✅ Cloud integrations</li>
+<li>❌ Less control</li>
+<li>❌ Higher cost</li>
+</ul>
+<p><strong>Verdict:</strong> Start with managed, learn self-managed for advanced use cases.</p>
+<hr>
+<h2 id="-core-kubernetes-concepts-preview">🧠 Core Kubernetes Concepts (Preview) </h2>
+<h3 id="1-pods">1. <strong>Pods</strong> </h3>
+<p>The smallest deployable unit. Contains one or more containers.</p>
+<h3 id="2-deployments">2. <strong>Deployments</strong> </h3>
+<p>Manages Pod replicas. Handles rolling updates and rollbacks.</p>
+<h3 id="3-services">3. <strong>Services</strong> </h3>
+<p>Provides stable networking and load balancing for Pods.</p>
+<h3 id="4-namespaces">4. <strong>Namespaces</strong> </h3>
+<p>Logical separation of resources (like folders).</p>
+<h3 id="5-configmaps--secrets">5. <strong>ConfigMaps &amp; Secrets</strong> </h3>
+<p>Configuration and sensitive data management.</p>
+<h3 id="6-volumes">6. <strong>Volumes</strong> </h3>
+<p>Persistent storage for Pods.</p>
+<hr>
+<h2 id="-when-to-use-kubernetes">🎯 When to Use Kubernetes </h2>
+<h3 id="-use-kubernetes-when">✅ Use Kubernetes When: </h3>
+<ul>
+<li>Running microservices architecture</li>
+<li>Need high availability</li>
+<li>Need auto-scaling</li>
+<li>Managing many containers</li>
+<li>Deploying to multiple environments</li>
+<li>Need rolling updates</li>
+<li>Building cloud-native applications</li>
+</ul>
+<h3 id="-dont-use-kubernetes-when">❌ Don't Use Kubernetes When: </h3>
+<ul>
+<li>Running a single simple application</li>
+<li>Team lacks Kubernetes expertise</li>
+<li>Overkill for your use case</li>
+<li>Budget constraints (consider managed services)</li>
+</ul>
+<hr>
+<h2 id="-kubernetes-adoption">📈 Kubernetes Adoption </h2>
+<p><strong>Why Kubernetes is everywhere:</strong></p>
+<ul>
+<li>✅ Industry standard (CNCF project)</li>
+<li>✅ Cloud provider support (GKE, EKS, AKS)</li>
+<li>✅ Huge ecosystem</li>
+<li>✅ Active community</li>
+<li>✅ Production-proven at scale (Google, Netflix, etc.)</li>
+</ul>
+<hr>
+<h2 id="-hands-on-lab-first-kubectl-commands">🧪 Hands-On Lab: First kubectl Commands </h2>
+<h3 id="prerequisites">Prerequisites </h3>
+<ul>
+<li>Kubernetes cluster running (Minikube, Kind, or cloud)</li>
+<li>kubectl installed</li>
+</ul>
+<h3 id="lab-1-check-cluster-status">Lab 1: Check Cluster Status </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check cluster nodes</span>
+kubectl get nodes
+
+<span class="token comment"># Expected output:</span>
+<span class="token comment"># NAME       STATUS   ROLES           AGE   VERSION</span>
+<span class="token comment"># minikube   Ready    control-plane   5m    v1.28.0</span>
+
+<span class="token comment"># Get cluster info</span>
+kubectl cluster-info
+
+<span class="token comment"># Check Kubernetes version</span>
+kubectl version <span class="token parameter variable">--client</span>
+</code></pre><h3 id="lab-2-explore-default-resources">Lab 2: Explore Default Resources </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># List all namespaces</span>
+kubectl get namespaces
+<span class="token comment"># or</span>
+kubectl get ns
+
+<span class="token comment"># List pods in default namespace</span>
+kubectl get pods
+
+<span class="token comment"># List all resources in cluster</span>
+kubectl get all --all-namespaces
+</code></pre><h3 id="lab-3-create-your-first-pod">Lab 3: Create Your First Pod </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Run a simple nginx pod</span>
+kubectl run nginx <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># Check pod status</span>
+kubectl get pods
+
+<span class="token comment"># Get pod details</span>
+kubectl describe pod nginx
+
+<span class="token comment"># View pod logs</span>
+kubectl logs nginx
+
+<span class="token comment"># Delete pod</span>
+kubectl delete pod nginx
+</code></pre><hr>
+<h2 id="-key-takeaways">🎓 Key Takeaways </h2>
+<ol>
+<li><strong>Kubernetes orchestrates containers</strong> at scale</li>
+<li><strong>Docker runs containers</strong>, Kubernetes manages them</li>
+<li><strong>Control Plane</strong> makes decisions, <strong>Worker Nodes</strong> execute</li>
+<li><strong>Pods</strong> are the smallest deployable unit</li>
+<li>Kubernetes solves: scaling, HA, networking, updates, resource management</li>
+</ol>
+<hr>
+<h2 id="-next-steps">🔗 Next Steps </h2>
+<p>Now that you understand <strong>why Kubernetes exists</strong>, let's dive deep into <strong>how it works</strong>:</p>
+<p>👉 <strong><a href="./ARCHITECTURE.md">Architecture Deep Dive</a></strong> - Control Plane, Worker Nodes, and Components</p>
+<hr>
+<h2 id="-additional-resources">📚 Additional Resources </h2>
+<ul>
+<li><a href="https://kubernetes.io/docs/">Kubernetes Official Docs</a></li>
+<li><a href="https://github.com/kubernetes/kubernetes">Kubernetes GitHub</a></li>
+<li><a href="https://landscape.cncf.io/">CNCF Landscape</a></li>
+</ul>
+<hr>
+<p><strong>Congratulations! You've completed Foundations. Ready to learn the architecture? 🚀</strong></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

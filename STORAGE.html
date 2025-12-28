@@ -1,0 +1,491 @@
+<!DOCTYPE html><html><head>
+      <title>STORAGE</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\vamil\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="-kubernetes-storage">💾 Kubernetes Storage </h1>
+<blockquote>
+<p><strong>Understanding Volumes, PersistentVolumes, PersistentVolumeClaims, and StorageClasses</strong></p>
+</blockquote>
+<hr>
+<h2 id="-learning-objectives">🎯 Learning Objectives </h2>
+<p>By the end of this section, you will:</p>
+<ul>
+<li>Understand why storage is challenging in Kubernetes</li>
+<li>Know the difference between volumes and persistent volumes</li>
+<li>Master PersistentVolumeClaims (PVCs)</li>
+<li>Understand StorageClasses and dynamic provisioning</li>
+<li>Configure storage for stateful workloads</li>
+</ul>
+<hr>
+<h2 id="-why-storage-is-hard-in-kubernetes">🚨 Why Storage is Hard in Kubernetes </h2>
+<h3 id="the-challenge">The Challenge </h3>
+<p><strong>Pods are ephemeral:</strong></p>
+<ul>
+<li>Pods can be deleted and recreated</li>
+<li>Pod IPs change</li>
+<li><strong>Local storage is lost when Pod is deleted</strong></li>
+</ul>
+<p><strong>Problem:</strong> How to persist data across Pod restarts?</p>
+<h3 id="the-solution-persistent-storage">The Solution: Persistent Storage </h3>
+<p>Kubernetes provides <strong>persistent storage</strong> that:</p>
+<ul>
+<li>✅ Survives Pod restarts</li>
+<li>✅ Can be shared between Pods</li>
+<li>✅ Managed independently of Pod lifecycle</li>
+</ul>
+<hr>
+<h2 id="-volume-types-overview">📦 Volume Types Overview </h2>
+<h3 id="1-ephemeral-volumes-pod-lifecycle">1. Ephemeral Volumes (Pod Lifecycle) </h3>
+<p><strong>Lifecycle:</strong> Tied to Pod. Deleted when Pod is deleted.</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><code>emptyDir</code> - Empty directory</li>
+<li><code>configMap</code> - Mount ConfigMap as volume</li>
+<li><code>secret</code> - Mount Secret as volume</li>
+</ul>
+<h3 id="2-persistent-volumes-cluster-lifecycle">2. Persistent Volumes (Cluster Lifecycle) </h3>
+<p><strong>Lifecycle:</strong> Independent of Pod. Survives Pod deletion.</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><code>PersistentVolume</code> (PV) - Cluster resource</li>
+<li><code>PersistentVolumeClaim</code> (PVC) - User request for storage</li>
+<li><code>StorageClass</code> - Dynamic provisioning</li>
+</ul>
+<hr>
+<h2 id="-volume-lifecycle-vs-pod-lifecycle">🔄 Volume Lifecycle vs Pod Lifecycle </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────┐
+│              POD LIFECYCLE                           │
+│                                                       │
+│  Pod Created → Pod Running → Pod Deleted             │
+│      │            │              │                    │
+│      │            │              │                    │
+└──────┼────────────┼──────────────┼───────────────────┘
+       │            │              │
+       ▼            ▼              ▼
+┌─────────────────────────────────────────────────────┐
+│         EPHEMERAL VOLUME (emptyDir)                  │
+│                                                       │
+│  Created → Available → DELETED                      │
+└─────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────┐
+│         PERSISTENT VOLUME (PV)                       │
+│                                                       │
+│  Created → Bound → Available → (Survives Pod)        │
+└─────────────────────────────────────────────────────┘
+</code></pre><hr>
+<h2 id="-ephemeral-volumes">📁 Ephemeral Volumes </h2>
+<h3 id="emptydir">emptyDir </h3>
+<p><strong>Purpose:</strong> Temporary storage for Pod lifetime.</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Scratch space</li>
+<li>Caching</li>
+<li>Temporary files</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> cache
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /cache
+  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> cache
+    <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre><p><strong>Storage Medium:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> cache
+  <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span>
+    <span class="token key atrule">medium</span><span class="token punctuation">:</span> Memory  <span class="token comment"># Use tmpfs (RAM)</span>
+    <span class="token key atrule">sizeLimit</span><span class="token punctuation">:</span> 1Gi
+</code></pre><h3 id="configmap--secret-covered-in-config--secrets-section">configMap &amp; secret (Covered in Config &amp; Secrets section) </h3>
+<hr>
+<h2 id="-persistent-volumes-pv">💿 Persistent Volumes (PV) </h2>
+<h3 id="what-is-a-persistentvolume">What is a PersistentVolume? </h3>
+<p><strong>PV</strong> = Cluster-wide storage resource provisioned by administrator.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Cluster resource (like Node)</li>
+<li>Has lifecycle independent of Pods</li>
+<li>Can be statically or dynamically provisioned</li>
+</ul>
+<h3 id="pv-example-static-provisioning">PV Example (Static Provisioning) </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolume
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> pv<span class="token punctuation">-</span><span class="token number">1</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">capacity</span><span class="token punctuation">:</span>
+    <span class="token key atrule">storage</span><span class="token punctuation">:</span> 10Gi
+  <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> ReadWriteOnce
+  <span class="token key atrule">persistentVolumeReclaimPolicy</span><span class="token punctuation">:</span> Retain
+  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> manual
+  <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+    <span class="token key atrule">path</span><span class="token punctuation">:</span> /data/pv<span class="token punctuation">-</span><span class="token number">1</span>
+</code></pre><p><strong>Access Modes:</strong></p>
+<ul>
+<li><strong>ReadWriteOnce (RWO)</strong>: Single node read-write</li>
+<li><strong>ReadOnlyMany (ROX)</strong>: Multiple nodes read-only</li>
+<li><strong>ReadWriteMany (RWX)</strong>: Multiple nodes read-write</li>
+</ul>
+<p><strong>Reclaim Policies:</strong></p>
+<ul>
+<li><strong>Retain</strong>: Manual cleanup (data preserved)</li>
+<li><strong>Recycle</strong>: Basic cleanup (deprecated)</li>
+<li><strong>Delete</strong>: Volume deleted automatically</li>
+</ul>
+<hr>
+<h2 id="-persistentvolumeclaims-pvc">📝 PersistentVolumeClaims (PVC) </h2>
+<h3 id="what-is-a-persistentvolumeclaim">What is a PersistentVolumeClaim? </h3>
+<p><strong>PVC</strong> = User's request for storage (like a "ticket" for storage).</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Request storage without knowing details</li>
+<li>Kubernetes finds/binds matching PV</li>
+<li>Pods use PVCs, not PVs directly</li>
+</ul>
+<h3 id="pvc-example">PVC Example </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolumeClaim
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>pvc
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> ReadWriteOnce
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+    <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+      <span class="token key atrule">storage</span><span class="token punctuation">:</span> 5Gi
+  <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> fast<span class="token punctuation">-</span>ssd
+</code></pre><h3 id="pv-pvc-binding">PV-PVC Binding </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────┐
+│              BINDING PROCESS                         │
+│                                                       │
+│  PVC Created (requests 5Gi, RWO)                     │
+│      │                                                │
+│      │ Kubernetes finds matching PV                  │
+│      │ (same access mode, sufficient capacity)       │
+│      │                                                │
+│      ▼                                                │
+│  PV Bound to PVC                                     │
+│      │                                                │
+│      ▼                                                │
+│  Pod uses PVC → Gets access to PV                    │
+└─────────────────────────────────────────────────────┘
+</code></pre><p><strong>Binding Rules:</strong></p>
+<ul>
+<li>Access modes must match</li>
+<li>Storage capacity must be sufficient</li>
+<li>StorageClass must match (if specified)</li>
+</ul>
+<hr>
+<h2 id="-storageclasses-dynamic-provisioning">🏭 StorageClasses: Dynamic Provisioning </h2>
+<h3 id="the-problem-with-static-provisioning">The Problem with Static Provisioning </h3>
+<p><strong>Static:</strong> Admin creates PVs manually → Time-consuming, inflexible</p>
+<h3 id="the-solution-storageclasses">The Solution: StorageClasses </h3>
+<p><strong>StorageClass</strong> = Template for dynamic PV creation.</p>
+<p><strong>How It Works:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>PVC Created → StorageClass → Provisioner → PV Created → Bound to PVC
+</code></pre><h3 id="storageclass-example">StorageClass Example </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> storage.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> StorageClass
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fast<span class="token punctuation">-</span>ssd
+<span class="token key atrule">provisioner</span><span class="token punctuation">:</span> kubernetes.io/gce<span class="token punctuation">-</span>pd
+<span class="token key atrule">parameters</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> pd<span class="token punctuation">-</span>ssd
+  <span class="token key atrule">replication-type</span><span class="token punctuation">:</span> regional<span class="token punctuation">-</span>pd
+<span class="token key atrule">volumeBindingMode</span><span class="token punctuation">:</span> WaitForFirstConsumer
+<span class="token key atrule">allowVolumeExpansion</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre><p><strong>Common Provisioners:</strong></p>
+<ul>
+<li><code>kubernetes.io/gce-pd</code> - GCP Persistent Disk</li>
+<li><code>kubernetes.io/aws-ebs</code> - AWS EBS</li>
+<li><code>kubernetes.io/azure-disk</code> - Azure Disk</li>
+<li><code>kubernetes.io/vsphere-volume</code> - vSphere</li>
+<li><code>kubernetes.io/portworx-volume</code> - Portworx</li>
+<li><code>kubernetes.io/cephfs</code> - CephFS</li>
+</ul>
+<p><strong>Volume Binding Modes:</strong></p>
+<ul>
+<li><strong>Immediate</strong>: PV created immediately</li>
+<li><strong>WaitForFirstConsumer</strong>: PV created when Pod is scheduled</li>
+</ul>
+<hr>
+<h2 id="-using-pvcs-in-pods">🔗 Using PVCs in Pods </h2>
+<h3 id="pod-with-pvc">Pod with PVC </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> app<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> data
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /data
+  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> data
+    <span class="token key atrule">persistentVolumeClaim</span><span class="token punctuation">:</span>
+      <span class="token key atrule">claimName</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>pvc
+</code></pre><h3 id="statefulset-with-pvc-template">StatefulSet with PVC Template </h3>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> StatefulSet
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> mysql
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> mysql
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> mysql
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span><span class="token number">8.0</span>
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> data
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /var/lib/mysql
+  <span class="token key atrule">volumeClaimTemplates</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> data
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">accessModes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"ReadWriteOnce"</span><span class="token punctuation">]</span>
+      <span class="token key atrule">storageClassName</span><span class="token punctuation">:</span> fast<span class="token punctuation">-</span>ssd
+      <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+        <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+          <span class="token key atrule">storage</span><span class="token punctuation">:</span> 10Gi
+</code></pre><p><strong>Result:</strong></p>
+<ul>
+<li><code>mysql-0</code> → <code>data-mysql-0</code> PVC</li>
+<li><code>mysql-1</code> → <code>data-mysql-1</code> PVC</li>
+<li><code>mysql-2</code> → <code>data-mysql-2</code> PVC</li>
+</ul>
+<hr>
+<h2 id="-storage-architecture-diagram">📊 Storage Architecture Diagram </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────┐
+│              STORAGE ARCHITECTURE                     │
+│                                                       │
+│  ┌───────────────────────────────────────────────┐  │
+│  │           STORAGECLASS                         │  │
+│  │  name: fast-ssd                               │  │
+│  │  provisioner: kubernetes.io/gce-pd            │  │
+│  └───────────────────────────────────────────────┘  │
+│                    │                                  │
+│                    │ Used by                          │
+│                    ▼                                  │
+│  ┌───────────────────────────────────────────────┐  │
+│  │           PERSISTENTVOLUMECLAIM                │  │
+│  │  name: my-pvc                                 │  │
+│  │  storage: 10Gi                                │  │
+│  │  storageClassName: fast-ssd                   │  │
+│  └──────────────────┬────────────────────────────┘  │
+│                     │                                 │
+│                     │ Bound to                        │
+│                     ▼                                 │
+│  ┌───────────────────────────────────────────────┐  │
+│  │           PERSISTENTVOLUME                      │  │
+│  │  name: pv-abc123                               │  │
+│  │  storage: 10Gi                                 │  │
+│  │  GCE Persistent Disk                           │  │
+│  └──────────────────┬────────────────────────────┘  │
+│                     │                                 │
+│                     │ Used by                         │
+│                     ▼                                 │
+│  ┌───────────────────────────────────────────────┐  │
+│  │                POD                              │  │
+│  │  volumeMounts: /data                           │  │
+│  │  volumes: persistentVolumeClaim: my-pvc         │  │
+│  └───────────────────────────────────────────────┘  │
+│                                                       │
+└─────────────────────────────────────────────────────┘
+</code></pre><hr>
+<h2 id="-hands-on-labs">🧪 Hands-On Labs </h2>
+<h3 id="lab-1-create-pvc-and-use-in-pod">Lab 1: Create PVC and Use in Pod </h3>
+<p><strong>Create PVC:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> PersistentVolumeClaim
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>pvc
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">accessModes</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> ReadWriteOnce
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+    <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+      <span class="token key atrule">storage</span><span class="token punctuation">:</span> 1Gi
+</code></pre><p><strong>Create Pod:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> test<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> data
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /data
+  <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> data
+    <span class="token key atrule">persistentVolumeClaim</span><span class="token punctuation">:</span>
+      <span class="token key atrule">claimName</span><span class="token punctuation">:</span> my<span class="token punctuation">-</span>pvc
+</code></pre><p><strong>Apply:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> pvc.yaml
+kubectl apply <span class="token parameter variable">-f</span> pod.yaml
+
+<span class="token comment"># Check PVC status</span>
+kubectl get pvc
+
+<span class="token comment"># Check PV (if dynamically created)</span>
+kubectl get <span class="token function">pv</span>
+
+<span class="token comment"># Write data</span>
+kubectl <span class="token builtin class-name">exec</span> test-pod -- <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">"echo 'Hello' &gt; /data/test.txt"</span>
+
+<span class="token comment"># Delete Pod</span>
+kubectl delete pod test-pod
+
+<span class="token comment"># Recreate Pod (data persists)</span>
+kubectl apply <span class="token parameter variable">-f</span> pod.yaml
+kubectl <span class="token builtin class-name">exec</span> test-pod -- <span class="token function">cat</span> /data/test.txt
+</code></pre><h3 id="lab-2-statefulset-with-pvc-template">Lab 2: StatefulSet with PVC Template </h3>
+<p><strong>Create StatefulSet:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> StatefulSet
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> web
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> web
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx<span class="token punctuation">:</span><span class="token number">1.21</span>
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> www
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /usr/share/nginx/html
+  <span class="token key atrule">volumeClaimTemplates</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> www
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">accessModes</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"ReadWriteOnce"</span><span class="token punctuation">]</span>
+      <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+        <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+          <span class="token key atrule">storage</span><span class="token punctuation">:</span> 1Gi
+</code></pre><p><strong>Apply:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> statefulset.yaml
+
+<span class="token comment"># Check PVCs (one per Pod)</span>
+kubectl get pvc
+<span class="token comment"># Output: www-web-0, www-web-1, www-web-2</span>
+
+<span class="token comment"># Check Pods</span>
+kubectl get pods <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>nginx
+</code></pre><h3 id="lab-3-check-storage-classes">Lab 3: Check Storage Classes </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># List StorageClasses</span>
+kubectl get storageclass
+
+<span class="token comment"># Describe StorageClass</span>
+kubectl describe storageclass <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Set default StorageClass</span>
+kubectl patch storageclass <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span> <span class="token parameter variable">-p</span> <span class="token string">'{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'</span>
+</code></pre><hr>
+<h2 id="-troubleshooting-storage">🐛 Troubleshooting Storage </h2>
+<h3 id="pvc-stuck-in-pending">PVC Stuck in Pending </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check PVC</span>
+kubectl describe pvc <span class="token operator">&lt;</span>pvc-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Common issues:</span>
+<span class="token comment"># - No StorageClass specified and no default</span>
+<span class="token comment"># - No available PVs (static provisioning)</span>
+<span class="token comment"># - Provisioner not working (dynamic provisioning)</span>
+</code></pre><h3 id="pv-not-bound">PV Not Bound </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check PV</span>
+kubectl describe <span class="token function">pv</span> <span class="token operator">&lt;</span>pv-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Common issues:</span>
+<span class="token comment"># - Access modes don't match</span>
+<span class="token comment"># - Storage capacity insufficient</span>
+<span class="token comment"># - StorageClass mismatch</span>
+</code></pre><h3 id="pod-cant-mount-volume">Pod Can't Mount Volume </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check Pod events</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Common issues:</span>
+<span class="token comment"># - PVC doesn't exist</span>
+<span class="token comment"># - PVC not bound</span>
+<span class="token comment"># - Node doesn't support volume type</span>
+</code></pre><hr>
+<h2 id="-key-takeaways">🎓 Key Takeaways </h2>
+<ol>
+<li><strong>Ephemeral volumes</strong> = Pod lifecycle (emptyDir, configMap, secret)</li>
+<li><strong>PersistentVolumes (PV)</strong> = Cluster storage resource</li>
+<li><strong>PersistentVolumeClaims (PVC)</strong> = User request for storage</li>
+<li><strong>StorageClasses</strong> = Template for dynamic PV provisioning</li>
+<li><strong>PV-PVC binding</strong> = Automatic matching based on requirements</li>
+<li><strong>StatefulSets</strong> = Use volumeClaimTemplates for per-Pod storage</li>
+<li><strong>Access modes</strong> = RWO, ROX, RWX</li>
+<li><strong>Reclaim policies</strong> = Retain, Delete</li>
+<li><strong>Dynamic provisioning</strong> = PVs created automatically from StorageClass</li>
+<li><strong>Storage survives Pod deletion</strong> = Key benefit of persistent storage</li>
+</ol>
+<hr>
+<h2 id="-next-steps">🔗 Next Steps </h2>
+<p>Now that you understand storage, let's learn about <strong>Configuration &amp; Secrets</strong>:</p>
+<p>👉 <strong><a href="./CONFIG_SECRETS.md">Config &amp; Secrets</a></strong> - ConfigMaps, Secrets, and environment variables</p>
+<hr>
+<h2 id="-additional-resources">📚 Additional Resources </h2>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes Documentation</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">PersistentVolumes</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">StorageClasses</a></li>
+</ul>
+<hr>
+<p><strong>Congratulations! You understand Kubernetes storage. Ready to learn config management? 🚀</strong></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

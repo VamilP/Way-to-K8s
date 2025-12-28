@@ -1,0 +1,513 @@
+<!DOCTYPE html><html><head>
+      <title>OBSERVABILITY</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\vamil\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="-observability--troubleshooting">📊 Observability &amp; Troubleshooting </h1>
+<blockquote>
+<p><strong>Understanding Logs, Metrics, Events, and Debugging Techniques</strong></p>
+</blockquote>
+<hr>
+<h2 id="-learning-objectives">🎯 Learning Objectives </h2>
+<p>By the end of this section, you will:</p>
+<ul>
+<li>Master kubectl debugging commands</li>
+<li>Understand Pod logs and how to access them</li>
+<li>Use events to diagnose issues</li>
+<li>Debug crash loops and networking issues</li>
+<li>Understand metrics and monitoring</li>
+<li>Troubleshoot common problems</li>
+</ul>
+<hr>
+<h2 id="-the-three-pillars-of-observability">🔍 The Three Pillars of Observability </h2>
+<h3 id="1-logs">1. Logs </h3>
+<p><strong>What:</strong> Text output from applications.</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Debugging errors</li>
+<li>Understanding application behavior</li>
+<li>Audit trails</li>
+</ul>
+<h3 id="2-metrics">2. Metrics </h3>
+<p><strong>What:</strong> Numerical measurements over time.</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Performance monitoring</li>
+<li>Capacity planning</li>
+<li>Alerting</li>
+</ul>
+<h3 id="3-traces">3. Traces </h3>
+<p><strong>What:</strong> Request flow across services.</p>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Understanding request paths</li>
+<li>Performance analysis</li>
+<li>Distributed debugging</li>
+</ul>
+<hr>
+<h2 id="-logs">📝 Logs </h2>
+<h3 id="viewing-pod-logs">Viewing Pod Logs </h3>
+<p><strong>Basic:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># View logs</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Follow logs (like tail -f)</span>
+kubectl logs <span class="token parameter variable">-f</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Previous container instance (if crashed)</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">--previous</span>
+
+<span class="token comment"># Specific container (multi-container Pod)</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">-c</span> <span class="token operator">&lt;</span>container-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Last N lines</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">--tail</span><span class="token operator">=</span><span class="token number">100</span>
+
+<span class="token comment"># Since specific time</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">--since</span><span class="token operator">=</span>1h
+</code></pre><h3 id="logs-from-multiple-pods">Logs from Multiple Pods </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># All Pods with label</span>
+kubectl logs <span class="token parameter variable">-l</span> <span class="token assign-left variable">app</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># All Pods in Deployment</span>
+kubectl logs <span class="token parameter variable">-f</span> deployment/nginx-deployment
+</code></pre><h3 id="log-locations">Log Locations </h3>
+<p><strong>Container Logs:</strong></p>
+<ul>
+<li>Stored on node: <code>/var/log/pods/</code></li>
+<li>Managed by kubelet</li>
+<li>Rotated automatically</li>
+</ul>
+<p><strong>System Logs:</strong></p>
+<ul>
+<li>kubelet: <code>journalctl -u kubelet</code></li>
+<li>kube-proxy: Pod logs in kube-system</li>
+<li>API server: Pod logs in kube-system</li>
+</ul>
+<hr>
+<h2 id="-events">📊 Events </h2>
+<h3 id="what-are-events">What are Events? </h3>
+<p><strong>Events</strong> = Records of what happened in the cluster.</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li>Normal (informational)</li>
+<li>Warning (issues)</li>
+</ul>
+<h3 id="viewing-events">Viewing Events </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># All events in namespace</span>
+kubectl get events
+
+<span class="token comment"># Watch events</span>
+kubectl get events <span class="token parameter variable">--watch</span>
+
+<span class="token comment"># Events for specific resource</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> Events
+
+<span class="token comment"># Events sorted by time</span>
+kubectl get events --sort-by<span class="token operator">=</span><span class="token string">'.lastTimestamp'</span>
+</code></pre><h3 id="event-fields">Event Fields </h3>
+<ul>
+<li><strong>Type</strong>: Normal, Warning</li>
+<li><strong>Reason</strong>: Why event occurred</li>
+<li><strong>Message</strong>: Human-readable description</li>
+<li><strong>Source</strong>: Component that created event</li>
+<li><strong>First/Last Seen</strong>: Timestamps</li>
+</ul>
+<h3 id="common-event-reasons">Common Event Reasons </h3>
+<ul>
+<li><code>Failed</code> - Pod failed to start</li>
+<li><code>BackOff</code> - Container restarting (backoff)</li>
+<li><code>Unhealthy</code> - Health check failed</li>
+<li><code>Scheduled</code> - Pod scheduled to node</li>
+<li><code>Pulled</code> - Image pulled</li>
+<li><code>Created</code> - Container created</li>
+<li><code>Started</code> - Container started</li>
+</ul>
+<hr>
+<h2 id="-kubectl-debugging-commands">🔧 kubectl Debugging Commands </h2>
+<h3 id="describe">describe </h3>
+<p><strong>Purpose:</strong> Detailed information about resource.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Describe Pod</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Describe Node</span>
+kubectl describe <span class="token function">node</span> <span class="token operator">&lt;</span>node-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Describe Service</span>
+kubectl describe svc <span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span>
+</code></pre><p><strong>What it shows:</strong></p>
+<ul>
+<li>Resource spec</li>
+<li>Current status</li>
+<li>Events</li>
+<li>Conditions</li>
+<li>Resource usage</li>
+</ul>
+<h3 id="get-with--o-wideyamljson">get with -o wide/yaml/json </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Wide output (more columns)</span>
+kubectl get pods <span class="token parameter variable">-o</span> wide
+
+<span class="token comment"># YAML output</span>
+kubectl get pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">-o</span> yaml
+
+<span class="token comment"># JSON output</span>
+kubectl get pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">-o</span> json
+
+<span class="token comment"># JSONPath</span>
+kubectl get pods <span class="token parameter variable">-o</span> <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">'{.items[*].metadata.name}'</span>
+</code></pre><h3 id="exec">exec </h3>
+<p><strong>Purpose:</strong> Execute command in running container.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Execute command</span>
+kubectl <span class="token builtin class-name">exec</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> -- <span class="token function">ls</span> /app
+
+<span class="token comment"># Interactive shell</span>
+kubectl <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> -- /bin/bash
+
+<span class="token comment"># Specific container</span>
+kubectl <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">-c</span> <span class="token operator">&lt;</span>container-name<span class="token operator">&gt;</span> -- /bin/bash
+</code></pre><h3 id="port-forward">port-forward </h3>
+<p><strong>Purpose:</strong> Forward local port to Pod port.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Forward port</span>
+kubectl port-forward <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token number">8080</span>:80
+
+<span class="token comment"># Forward to Service</span>
+kubectl port-forward svc/<span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span> <span class="token number">8080</span>:80
+
+<span class="token comment"># Specific namespace</span>
+kubectl port-forward <span class="token parameter variable">-n</span> <span class="token operator">&lt;</span>namespace<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token number">8080</span>:80
+</code></pre><h3 id="top">top </h3>
+<p><strong>Purpose:</strong> Resource usage (CPU, memory).</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Pod resource usage</span>
+kubectl <span class="token function">top</span> pods
+
+<span class="token comment"># Node resource usage</span>
+kubectl <span class="token function">top</span> nodes
+
+<span class="token comment"># Specific namespace</span>
+kubectl <span class="token function">top</span> pods <span class="token parameter variable">-n</span> <span class="token operator">&lt;</span>namespace<span class="token operator">&gt;</span>
+
+<span class="token comment"># Requires metrics-server installed</span>
+</code></pre><hr>
+<h2 id="-common-debugging-scenarios">🐛 Common Debugging Scenarios </h2>
+<h3 id="1-pod-crash-loop">1. Pod Crash Loop </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Pod status: <code>CrashLoopBackOff</code></li>
+<li>Pod keeps restarting</li>
+</ul>
+<p><strong>Debug Steps:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check Pod status</span>
+kubectl get pods
+
+<span class="token comment"># Describe Pod</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check logs</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Previous instance logs</span>
+kubectl logs <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">--previous</span>
+
+<span class="token comment"># Check events</span>
+kubectl get events --field-selector <span class="token assign-left variable">involvedObject.name</span><span class="token operator">=</span><span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+</code></pre><p><strong>Common Causes:</strong></p>
+<ul>
+<li>Application error</li>
+<li>Wrong image</li>
+<li>Missing environment variables</li>
+<li>Resource limits exceeded</li>
+<li>Health check failing</li>
+</ul>
+<h3 id="2-pod-pending">2. Pod Pending </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Pod status: <code>Pending</code></li>
+<li>Not scheduled to node</li>
+</ul>
+<p><strong>Debug Steps:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Describe Pod</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check events</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> Events
+
+<span class="token comment"># Check node resources</span>
+kubectl describe nodes
+
+<span class="token comment"># Check node selectors/affinity</span>
+kubectl get pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">-o</span> yaml <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> nodeSelector
+</code></pre><p><strong>Common Causes:</strong></p>
+<ul>
+<li>Insufficient resources</li>
+<li>Node selector mismatch</li>
+<li>Taints not tolerated</li>
+<li>Affinity rules not satisfied</li>
+</ul>
+<h3 id="3-pod-not-ready">3. Pod Not Ready </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Pod status: <code>Running</code> but not <code>Ready</code></li>
+<li>Readiness probe failing</li>
+</ul>
+<p><strong>Debug Steps:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check Pod status</span>
+kubectl get pods
+
+<span class="token comment"># Describe Pod</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check readiness probe</span>
+kubectl get pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">-o</span> yaml <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> readinessProbe
+
+<span class="token comment"># Test endpoint manually</span>
+kubectl <span class="token builtin class-name">exec</span> <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> -- <span class="token function">curl</span> http://localhost:8080/health
+</code></pre><p><strong>Common Causes:</strong></p>
+<ul>
+<li>Readiness probe path wrong</li>
+<li>Application not ready</li>
+<li>Port mismatch</li>
+</ul>
+<h3 id="4-service-not-working">4. Service Not Working </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Can't reach Service</li>
+<li>Connection refused</li>
+</ul>
+<p><strong>Debug Steps:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check Service</span>
+kubectl get svc <span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span>
+kubectl describe svc <span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check Endpoints</span>
+kubectl get endpoints <span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check Pod labels match selector</span>
+kubectl get pods --show-labels
+kubectl get svc <span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span> <span class="token parameter variable">-o</span> yaml <span class="token operator">|</span> <span class="token function">grep</span> selector
+
+<span class="token comment"># Test from Pod</span>
+kubectl run <span class="token builtin class-name">test</span> <span class="token parameter variable">--image</span><span class="token operator">=</span>curlimages/curl <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> -- <span class="token function">sh</span>
+<span class="token comment"># Inside: curl http://&lt;service-name&gt;</span>
+</code></pre><p><strong>Common Causes:</strong></p>
+<ul>
+<li>No Pods match selector</li>
+<li>Port mismatch</li>
+<li>Pods not ready</li>
+</ul>
+<h3 id="5-networking-issues">5. Networking Issues </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Pods can't communicate</li>
+<li>DNS not resolving</li>
+</ul>
+<p><strong>Debug Steps:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check Pod IPs</span>
+kubectl get pods <span class="token parameter variable">-o</span> wide
+
+<span class="token comment"># Test connectivity</span>
+kubectl <span class="token builtin class-name">exec</span> <span class="token operator">&lt;</span>pod-<span class="token operator"><span class="token file-descriptor important">1</span>&gt;</span> -- <span class="token function">ping</span> <span class="token operator">&lt;</span>pod-2-ip<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check DNS</span>
+kubectl run dns-test <span class="token parameter variable">--image</span><span class="token operator">=</span>busybox <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> -- <span class="token function">nslookup</span> <span class="token operator">&lt;</span>service-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check CoreDNS</span>
+kubectl get pods <span class="token parameter variable">-n</span> kube-system <span class="token operator">|</span> <span class="token function">grep</span> coredns
+kubectl logs <span class="token parameter variable">-n</span> kube-system <span class="token operator">&lt;</span>coredns-pod<span class="token operator">&gt;</span>
+</code></pre><h3 id="6-image-pull-errors">6. Image Pull Errors </h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Pod status: <code>ImagePullBackOff</code> or <code>ErrImagePull</code></li>
+</ul>
+<p><strong>Debug Steps:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Describe Pod</span>
+kubectl describe pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span>
+
+<span class="token comment"># Check image</span>
+kubectl get pod <span class="token operator">&lt;</span>pod-name<span class="token operator">&gt;</span> <span class="token parameter variable">-o</span> <span class="token assign-left variable">jsonpath</span><span class="token operator">=</span><span class="token string">'{.spec.containers[*].image}'</span>
+
+<span class="token comment"># Test image pull manually</span>
+<span class="token function">docker</span> pull <span class="token operator">&lt;</span>image-name<span class="token operator">&gt;</span>
+</code></pre><p><strong>Common Causes:</strong></p>
+<ul>
+<li>Image doesn't exist</li>
+<li>Wrong image name/tag</li>
+<li>Private registry authentication missing</li>
+<li>Network issues</li>
+</ul>
+<hr>
+<h2 id="-metrics--monitoring">📈 Metrics &amp; Monitoring </h2>
+<h3 id="metrics-server">Metrics Server </h3>
+<p><strong>Purpose:</strong> Collects resource usage metrics.</p>
+<p><strong>Installation:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+</code></pre><p><strong>Usage:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl <span class="token function">top</span> nodes
+kubectl <span class="token function">top</span> pods
+</code></pre><h3 id="prometheus-popular-monitoring">Prometheus (Popular Monitoring) </h3>
+<p><strong>Purpose:</strong> Metrics collection and alerting.</p>
+<p><strong>Components:</strong></p>
+<ul>
+<li>Prometheus Server</li>
+<li>Node Exporter</li>
+<li>kube-state-metrics</li>
+<li>Grafana (visualization)</li>
+</ul>
+<h3 id="monitoring-stack">Monitoring Stack </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────┐
+│              MONITORING STACK                         │
+│                                                       │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐          │
+│  │ Prometheus│  │ Grafana  │  │ Alertmanager│       │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘          │
+│       │             │              │                  │
+│       └─────────────┼──────────────┘                  │
+│                     │                                 │
+│              ┌──────▼──────┐                         │
+│              │   Metrics   │                         │
+│              │  Collection │                         │
+│              └─────────────┘                         │
+└─────────────────────────────────────────────────────┘
+</code></pre><hr>
+<h2 id="-debugging-workflow">🔍 Debugging Workflow </h2>
+<h3 id="step-by-step-process">Step-by-Step Process </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1. Check resource status
+   kubectl get &lt;resource&gt;
+
+2. Get detailed information
+   kubectl describe &lt;resource&gt;
+
+3. Check logs
+   kubectl logs &lt;pod-name&gt;
+
+4. Check events
+   kubectl get events
+
+5. Verify configuration
+   kubectl get &lt;resource&gt; -o yaml
+
+6. Test connectivity
+   kubectl exec &lt;pod&gt; -- &lt;command&gt;
+
+7. Check related resources
+   kubectl get all -l &lt;label&gt;
+</code></pre><hr>
+<h2 id="-hands-on-labs">🧪 Hands-On Labs </h2>
+<h3 id="lab-1-view-logs">Lab 1: View Logs </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Create Pod</span>
+kubectl run nginx <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># View logs</span>
+kubectl logs nginx
+
+<span class="token comment"># Follow logs</span>
+kubectl logs <span class="token parameter variable">-f</span> nginx
+
+<span class="token comment"># Previous instance (if restarted)</span>
+kubectl logs nginx <span class="token parameter variable">--previous</span>
+</code></pre><h3 id="lab-2-debug-crash-loop">Lab 2: Debug Crash Loop </h3>
+<p><strong>Create failing Pod:</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> crash<span class="token punctuation">-</span>pod
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> app
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> busybox
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'sh'</span><span class="token punctuation">,</span> <span class="token string">'-c'</span><span class="token punctuation">,</span> <span class="token string">'exit 1'</span><span class="token punctuation">]</span>
+</code></pre><p><strong>Debug:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>kubectl apply <span class="token parameter variable">-f</span> pod.yaml
+kubectl get pods
+kubectl describe pod crash-pod
+kubectl logs crash-pod
+kubectl logs crash-pod <span class="token parameter variable">--previous</span>
+</code></pre><h3 id="lab-3-check-events">Lab 3: Check Events </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Create Pod</span>
+kubectl run <span class="token builtin class-name">test</span> <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># Watch events</span>
+kubectl get events <span class="token parameter variable">--watch</span>
+
+<span class="token comment"># Get events for Pod</span>
+kubectl describe pod <span class="token builtin class-name">test</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-A</span> <span class="token number">10</span> Events
+
+<span class="token comment"># All events sorted</span>
+kubectl get events --sort-by<span class="token operator">=</span><span class="token string">'.lastTimestamp'</span>
+</code></pre><h3 id="lab-4-exec-into-pod">Lab 4: Exec into Pod </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Create Pod</span>
+kubectl run debug <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># Execute command</span>
+kubectl <span class="token builtin class-name">exec</span> debug -- <span class="token function">ls</span> /usr/share/nginx/html
+
+<span class="token comment"># Interactive shell</span>
+kubectl <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> debug -- /bin/bash
+</code></pre><h3 id="lab-5-port-forward">Lab 5: Port Forward </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Create Pod</span>
+kubectl run nginx <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
+
+<span class="token comment"># Port forward</span>
+kubectl port-forward nginx <span class="token number">8080</span>:80
+
+<span class="token comment"># In another terminal, test</span>
+<span class="token function">curl</span> http://localhost:8080
+</code></pre><hr>
+<h2 id="-key-takeaways">🎓 Key Takeaways </h2>
+<ol>
+<li><strong>Logs</strong> = Application output (<code>kubectl logs</code>)</li>
+<li><strong>Events</strong> = Cluster activity (<code>kubectl get events</code>)</li>
+<li><strong>describe</strong> = Detailed resource information</li>
+<li><strong>exec</strong> = Execute commands in Pods</li>
+<li><strong>port-forward</strong> = Access Pods locally</li>
+<li><strong>top</strong> = Resource usage (requires metrics-server)</li>
+<li><strong>Debug workflow</strong> = get → describe → logs → events</li>
+<li><strong>Crash loops</strong> = Check logs and events</li>
+<li><strong>Pending Pods</strong> = Check resources and selectors</li>
+<li><strong>Monitoring</strong> = Prometheus + Grafana stack</li>
+</ol>
+<hr>
+<h2 id="-next-steps">🔗 Next Steps </h2>
+<p>Now that you understand observability, let's learn about <strong>Cluster Maintenance</strong>:</p>
+<p>👉 <strong><a href="./MAINTENANCE.md">Maintenance</a></strong> - Upgrades, backups, HA, and disaster recovery</p>
+<hr>
+<h2 id="-additional-resources">📚 Additional Resources </h2>
+<ul>
+<li><a href="https://kubernetes.io/docs/tasks/debug/">Debugging Documentation</a></li>
+<li><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/">Troubleshooting</a></li>
+<li><a href="https://prometheus.io/">Prometheus</a></li>
+</ul>
+<hr>
+<p><strong>Congratulations! You understand observability. Ready to learn maintenance? 🚀</strong></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
