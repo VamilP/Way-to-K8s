@@ -858,102 +858,105 @@
 
       <p class="crossnote markdown-preview  ">
 
-            <h1 id="-kubernetes-foundations">🔹 Kubernetes Foundations </h1>
-            <blockquote>
-                  <p><strong>Understanding Why Kubernetes Exists and What Problems It Solves</strong></p>
-            </blockquote>
-            <hr>
-            <h2 id="-learning-objectives">🎯 Learning Objectives </h2>
-            <p>By the end of this section, you will:</p>
-            <ul>
-                  <li>Understand what Kubernetes is and why it exists</li>
-                  <li>Know the problems Kubernetes solves</li>
-                  <li>Understand why Docker alone is not enough</li>
-                  <li>Compare Kubernetes with alternatives</li>
-                  <li>Have a high-level mental model of Kubernetes</li>
-            </ul>
-            <hr>
-            <h2 id="-what-is-kubernetes">🤔 What is Kubernetes? </h2>
-            <p><strong>Kubernetes</strong> (often abbreviated as <strong>K8s</strong>) is an <strong>open-source
-                        container orchestration platform</strong> that automates the deployment, scaling, and management
-                  of containerized applications.</p>
-            <h3 id="the-simple-analogy">The Simple Analogy </h3>
-            <p>Think of Kubernetes like a <strong>smart restaurant manager</strong>:</p>
-            <ul>
-                  <li><strong>Docker</strong> = Individual chefs cooking dishes (containers)</li>
-                  <li><strong>Kubernetes</strong> = The restaurant manager who:
-                        <ul>
-                              <li>Assigns chefs to stations (scheduling)</li>
-                              <li>Ensures enough chefs are working (scaling)</li>
-                              <li>Replaces chefs who get sick (self-healing)</li>
-                              <li>Coordinates between kitchen and dining room (networking)</li>
-                              <li>Manages inventory and supplies (storage)</li>
-                              <li>Handles customer requests (load balancing)</li>
-                        </ul>
-                  </li>
-            </ul>
-            <hr>
-            <h2 id="-problems-kubernetes-solves">🚨 Problems Kubernetes Solves </h2>
-            <h3 id="problem-1-container-orchestration-at-scale">Problem 1: Container Orchestration at Scale </h3>
-            <p><strong>Without Kubernetes:</strong></p>
-            <pre data-role="codeBlock" data-info="" class="language-text"><code>You: "I need to run 100 containers"
+      <h1 id="-kubernetes-foundations">🔹 Kubernetes Foundations </h1>
+      <blockquote>
+            <p><strong>Understanding Why Kubernetes Exists and What Problems It Solves</strong></p>
+      </blockquote>
+      <hr>
+      <h2 id="-learning-objectives">🎯 Learning Objectives </h2>
+      <p>By the end of this section, you will:</p>
+      <ul>
+            <li>Understand what Kubernetes is and why it exists</li>
+            <li>Know the problems Kubernetes solves</li>
+            <li>Understand why Docker alone is not enough</li>
+            <li>Compare Kubernetes with alternatives</li>
+            <li>Have a high-level mental model of Kubernetes</li>
+      </ul>
+      <hr>
+      <h2 id="-what-is-kubernetes">🤔 What is Kubernetes? </h2>
+      <p><strong>Kubernetes</strong> (often abbreviated as <strong>K8s</strong>) is an <strong>open-source
+                  container orchestration platform</strong> that automates the deployment, scaling, and management
+            of containerized applications.</p>
+      <h3 id="the-simple-analogy">The Simple Analogy </h3>
+      <p>Think of Kubernetes like a <strong>smart restaurant manager</strong>:</p>
+      <ul>
+            <li><strong>Docker</strong> = Individual chefs cooking dishes (containers)</li>
+            <li><strong>Kubernetes</strong> = The restaurant manager who:
+                  <ul>
+                        <li>Assigns chefs to stations (scheduling)</li>
+                        <li>Ensures enough chefs are working (scaling)</li>
+                        <li>Replaces chefs who get sick (self-healing)</li>
+                        <li>Coordinates between kitchen and dining room (networking)</li>
+                        <li>Manages inventory and supplies (storage)</li>
+                        <li>Handles customer requests (load balancing)</li>
+                  </ul>
+            </li>
+      </ul>
+      <hr>
+      <h2 id="-problems-kubernetes-solves">🚨 Problems Kubernetes Solves </h2>
+      <h3 id="problem-1-container-orchestration-at-scale">Problem 1: Container Orchestration at Scale </h3>
+      <p><strong>Without Kubernetes:</strong></p>
+      <pre data-role="codeBlock" data-info="" class="language-text"><code>You: "I need to run 100 containers"
 You: *manually starts 100 containers*
 You: "One crashed, let me restart it manually"
 You: "Traffic increased, let me manually start 50 more"
 You: "I need to update the app, let me manually stop and restart all 100"
 </code></pre>
-            <p><strong>With Kubernetes:</strong></p>
-            <pre data-role="codeBlock" data-info="" class="language-text"><code>You: "I need 100 replicas"
+      <p><strong>With Kubernetes:</strong></p>
+      <pre data-role="codeBlock" data-info="" class="language-text"><code>You: "I need 100 replicas"
 Kubernetes: "Done. Monitoring them. Auto-restarting failures. Scaling as needed."
 </code></pre>
-            <h3 id="problem-2-high-availability">Problem 2: High Availability </h3>
-            <p><strong>Challenge:</strong> If a server crashes, your application goes down.</p>
-            <p><strong>Kubernetes Solution:</strong> Automatically reschedules containers to healthy nodes.</p>
-            <h3 id="problem-3-load-balancing--service-discovery">Problem 3: Load Balancing &amp; Service Discovery </h3>
-            <p><strong>Challenge:</strong> Containers have dynamic IPs. How do clients find them?</p>
-            <p><strong>Kubernetes Solution:</strong> Services provide stable endpoints and load balancing. Kubernetes Services provide a stable network endpoint and DNS name that abstracts dynamic Pod IPs and load-balances traffic across healthy Pods.</p>
-            <h3 id="problem-4-rolling-updates--rollbacks">Problem 4: Rolling Updates &amp; Rollbacks </h3>
-            <p><strong>Challenge:</strong> Updating an app requires downtime or complex coordination.</p>
-            <p><strong>Kubernetes Solution:</strong> Zero-downtime rolling updates with automatic rollback.</p>
-            <h3 id="problem-5-resource-management">Problem 5: Resource Management </h3>
-            <p><strong>Challenge:</strong> Some containers need more CPU/memory. How to allocate fairly?</p>
-            <p><strong>Kubernetes Solution:</strong> Resource requests and limits with intelligent scheduling.</p>
-            <h3 id="problem-6-configuration--secrets-management">Problem 6: Configuration &amp; Secrets Management </h3>
-            <p><strong>Challenge:</strong> Managing configs and secrets across many containers.</p>
-            <p><strong>Kubernetes Solution:</strong> ConfigMaps and Secrets with centralized management.</p>
-            <hr>
-            <h2 id="-why-docker-alone-is-not-enough">🐳 Why Docker Alone Is Not Enough </h2>
-            <h3 id="dockers-limitations">Docker's Limitations </h3>
-            <p>Docker is excellent for:</p>
-            <ul>
-                  <li>✅ Building container images</li>
-                  <li>✅ Running containers locally</li>
-                  <li>✅ Containerizing applications</li>
-            </ul>
-            <p>Docker is <strong>not designed</strong> for:</p>
-            <ul>
-                  <li>❌ Managing hundreds of containers</li>
-                  <li>❌ Automatic scaling</li>
-                  <li>❌ Self-healing (restarting failed containers)</li>
-                  <li>❌ Load balancing across containers</li>
-                  <li>❌ Rolling updates</li>
-                  <li>❌ Service discovery</li>
-                  <li>❌ Multi-host networking</li>
-                  <li>❌ Resource scheduling</li>
-            </ul>
-            <h3 id="the-gap">The Gap </h3>
-            <pre data-role="codeBlock" data-info="" class="language-text"><code>Docker: "I can run containers"
+      <h3 id="problem-2-high-availability">Problem 2: High Availability </h3>
+      <p><strong>Challenge:</strong> If a server crashes, your application goes down.</p>
+      <p><strong>Kubernetes Solution:</strong> Automatically reschedules containers to healthy nodes.</p>
+      <h3 id="problem-3-load-balancing--service-discovery">Problem 3: Load Balancing &amp; Service Discovery </h3>
+      <p><strong>Challenge:</strong> Containers have dynamic IPs. How do clients find them?</p>
+      <p><strong>Kubernetes Solution:</strong> Services provide stable endpoints and load balancing. Kubernetes Services
+            provide a stable network endpoint and DNS name that abstracts dynamic Pod IPs and load-balances traffic
+            across healthy Pods.</p>
+      <h3 id="problem-4-rolling-updates--rollbacks">Problem 4: Rolling Updates &amp; Rollbacks </h3>
+      <p><strong>Challenge:</strong> Updating an app requires downtime or complex coordination.</p>
+      <p><strong>Kubernetes Solution:</strong> Zero-downtime rolling updates with automatic rollback.</p>
+      <h3 id="problem-5-resource-management">Problem 5: Resource Management </h3>
+      <p><strong>Challenge:</strong> Some containers need more CPU/memory. How to allocate fairly?</p>
+      <p><strong>Kubernetes Solution:</strong> Resource requests and limits with intelligent scheduling.</p>
+      <h3 id="problem-6-configuration--secrets-management">Problem 6: Configuration &amp; Secrets Management </h3>
+      <p><strong>Challenge:</strong> Managing configs and secrets across many containers.</p>
+      <p><strong>Kubernetes Solution:</strong> ConfigMaps and Secrets with centralized management.</p>
+      <hr>
+      <h2 id="-why-docker-alone-is-not-enough">🐳 Why Docker Alone Is Not Enough </h2>
+      <h3 id="dockers-limitations">Docker's Limitations </h3>
+      <p>Docker is excellent for:</p>
+      <ul>
+            <li>✅ Building container images</li>
+            <li>✅ Running containers locally</li>
+            <li>✅ Containerizing applications</li>
+      </ul>
+      <p>Docker is <strong>not designed</strong> for:</p>
+      <ul>
+            <li>❌ Managing hundreds of containers</li>
+            <li>❌ Automatic scaling</li>
+            <li>❌ Self-healing (restarting failed containers)</li>
+            <li>❌ Load balancing across containers</li>
+            <li>❌ Rolling updates</li>
+            <li>❌ Service discovery</li>
+            <li>❌ Multi-host networking</li>
+            <li>❌ Resource scheduling</li>
+      </ul>
+      <h3 id="the-gap">The Gap </h3>
+      <pre data-role="codeBlock" data-info="" class="language-text"><code>Docker: "I can run containers"
 Kubernetes: "I can orchestrate thousands of containers across clusters"
 </code></pre>
-            <p><strong>Think of it this way:</strong></p>
-            <ul>
-                  <li><strong>Docker</strong> = The engine of a car</li>
-                  <li><strong>Kubernetes</strong> = The entire transportation system (traffic lights, highways, GPS,
-                        maintenance)</li>
-            </ul>
-            <hr>
-            <h2 id="-high-level-architecture-overview">📊 High-Level Architecture Overview </h2>
-            <pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────────────┐
+      <p><strong>Think of it this way:</strong></p>
+      <ul>
+            <li><strong>Docker</strong> = The engine of a car</li>
+            <li><strong>Kubernetes</strong> = The entire transportation system (traffic lights, highways, GPS,
+                  maintenance)</li>
+      </ul>
+      <hr>
+      <h2 id="-high-level-architecture-overview">📊 High-Level Architecture Overview </h2>
+      <pre data-role="codeBlock" data-info="" class="language-text">
+                  <code>┌─────────────────────────────────────────────────────────────┐
 │                    KUBERNETES CLUSTER                        │
 │                                                               │
 │  ┌──────────────────────────────────────────────────────┐  │
@@ -985,159 +988,159 @@ Kubernetes: "I can orchestrate thousands of containers across clusters"
 │                                                               │
 └─────────────────────────────────────────────────────────────┘
 </code></pre>
-            <p><strong>Key Concepts:</strong></p>
-            <ul>
-                  <li><strong>Control Plane</strong>: The "brain" that makes decisions</li>
-                  <li><strong>Worker Nodes</strong>: The "muscles" that run your containers</li>
-                  <li><strong>Pods</strong>: The smallest deployable unit (contains containers)</li>
-            </ul>
-            <hr>
-            <h2 id="-kubernetes-vs-alternatives">🆚 Kubernetes vs Alternatives </h2>
-            <h3 id="kubernetes-vs-docker-swarm">Kubernetes vs Docker Swarm </h3>
-            <table>
-                  <thead>
-                        <tr>
-                              <th>Feature</th>
-                              <th>Kubernetes</th>
-                              <th>Docker Swarm</th>
-                        </tr>
-                  </thead>
-                  <tbody>
-                        <tr>
-                              <td><strong>Complexity</strong></td>
-                              <td>Higher learning curve</td>
-                              <td>Simpler</td>
-                        </tr>
-                        <tr>
-                              <td><strong>Scalability</strong></td>
-                              <td>Handles 1000s of nodes</td>
-                              <td>Good for smaller clusters</td>
-                        </tr>
-                        <tr>
-                              <td><strong>Ecosystem</strong></td>
-                              <td>Massive (CNCF)</td>
-                              <td>Docker-focused</td>
-                        </tr>
-                        <tr>
-                              <td><strong>Production Ready</strong></td>
-                              <td>Industry standard</td>
-                              <td>Good for simple use cases</td>
-                        </tr>
-                        <tr>
-                              <td><strong>Best For</strong></td>
-                              <td>Enterprise, complex apps</td>
-                              <td>Small teams, simple apps</td>
-                        </tr>
-                  </tbody>
-            </table>
-            <p><strong>Verdict:</strong> Kubernetes wins for production-scale deployments.</p>
-            <h3 id="kubernetes-vs-virtual-machines">Kubernetes vs Virtual Machines </h3>
-            <table>
-                  <thead>
-                        <tr>
-                              <th>Feature</th>
-                              <th>Kubernetes</th>
-                              <th>VMs</th>
-                        </tr>
-                  </thead>
-                  <tbody>
-                        <tr>
-                              <td><strong>Resource Usage</strong></td>
-                              <td>Lightweight (containers)</td>
-                              <td>Heavy (full OS)</td>
-                        </tr>
-                        <tr>
-                              <td><strong>Startup Time</strong></td>
-                              <td>Seconds</td>
-                              <td>Minutes</td>
-                        </tr>
-                        <tr>
-                              <td><strong>Isolation</strong></td>
-                              <td>Process-level</td>
-                              <td>Full OS-level</td>
-                        </tr>
-                        <tr>
-                              <td><strong>Orchestration</strong></td>
-                              <td>Built-in</td>
-                              <td>Requires tools</td>
-                        </tr>
-                        <tr>
-                              <td><strong>Best For</strong></td>
-                              <td>Microservices, cloud-native</td>
-                              <td>Legacy apps, full OS needed</td>
-                        </tr>
-                  </tbody>
-            </table>
-            <p><strong>Verdict:</strong> Kubernetes is better for modern, cloud-native applications.</p>
-            <h3 id="kubernetes-vs-managed-services">Kubernetes vs Managed Services </h3>
-            <p><strong>Kubernetes (Self-Managed):</strong></p>
-            <ul>
-                  <li>✅ Full control</li>
-                  <li>✅ Cost-effective at scale</li>
-                  <li>❌ You manage everything</li>
-                  <li>❌ Steeper learning curve</li>
-            </ul>
-            <p><strong>Managed Kubernetes (GKE/EKS/AKS):</strong></p>
-            <ul>
-                  <li>✅ Managed control plane</li>
-                  <li>✅ Easier to get started</li>
-                  <li>✅ Cloud integrations</li>
-                  <li>❌ Less control</li>
-                  <li>❌ Higher cost</li>
-            </ul>
-            <p><strong>Verdict:</strong> Start with managed, learn self-managed for advanced use cases.</p>
-            <hr>
-            <h2 id="-core-kubernetes-concepts-preview">🧠 Core Kubernetes Concepts (Preview) </h2>
-            <h3 id="1-pods">1. <strong>Pods</strong> </h3>
-            <p>The smallest deployable unit. Contains one or more containers.</p>
-            <h3 id="2-deployments">2. <strong>Deployments</strong> </h3>
-            <p>Manages Pod replicas. Handles rolling updates and rollbacks.</p>
-            <h3 id="3-services">3. <strong>Services</strong> </h3>
-            <p>Provides stable networking and load balancing for Pods.</p>
-            <h3 id="4-namespaces">4. <strong>Namespaces</strong> </h3>
-            <p>Logical separation of resources (like folders).</p>
-            <h3 id="5-configmaps--secrets">5. <strong>ConfigMaps &amp; Secrets</strong> </h3>
-            <p>Configuration and sensitive data management.</p>
-            <h3 id="6-volumes">6. <strong>Volumes</strong> </h3>
-            <p>Persistent storage for Pods.</p>
-            <hr>
-            <h2 id="-when-to-use-kubernetes">🎯 When to Use Kubernetes </h2>
-            <h3 id="-use-kubernetes-when">✅ Use Kubernetes When: </h3>
-            <ul>
-                  <li>Running microservices architecture</li>
-                  <li>Need high availability</li>
-                  <li>Need auto-scaling</li>
-                  <li>Managing many containers</li>
-                  <li>Deploying to multiple environments</li>
-                  <li>Need rolling updates</li>
-                  <li>Building cloud-native applications</li>
-            </ul>
-            <h3 id="-dont-use-kubernetes-when">❌ Don't Use Kubernetes When: </h3>
-            <ul>
-                  <li>Running a single simple application</li>
-                  <li>Team lacks Kubernetes expertise</li>
-                  <li>Overkill for your use case</li>
-                  <li>Budget constraints (consider managed services)</li>
-            </ul>
-            <hr>
-            <h2 id="-kubernetes-adoption">📈 Kubernetes Adoption </h2>
-            <p><strong>Why Kubernetes is everywhere:</strong></p>
-            <ul>
-                  <li>✅ Industry standard (CNCF project)</li>
-                  <li>✅ Cloud provider support (GKE, EKS, AKS)</li>
-                  <li>✅ Huge ecosystem</li>
-                  <li>✅ Active community</li>
-                  <li>✅ Production-proven at scale (Google, Netflix, etc.)</li>
-            </ul>
-            <hr>
-            <h2 id="-hands-on-lab-first-kubectl-commands">🧪 Hands-On Lab: First kubectl Commands </h2>
-            <h3 id="prerequisites">Prerequisites </h3>
-            <ul>
-                  <li>Kubernetes cluster running (Minikube, Kind, or cloud)</li>
-                  <li>kubectl installed</li>
-            </ul>
-            <h3 id="lab-1-check-cluster-status">Lab 1: Check Cluster Status </h3>
-            <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check cluster nodes</span>
+      <p><strong>Key Concepts:</strong></p>
+      <ul>
+            <li><strong>Control Plane</strong>: The "brain" that makes decisions</li>
+            <li><strong>Worker Nodes</strong>: The "muscles" that run your containers</li>
+            <li><strong>Pods</strong>: The smallest deployable unit (contains containers)</li>
+      </ul>
+      <hr>
+      <h2 id="-kubernetes-vs-alternatives">🆚 Kubernetes vs Alternatives </h2>
+      <h3 id="kubernetes-vs-docker-swarm">Kubernetes vs Docker Swarm </h3>
+      <table>
+            <thead>
+                  <tr>
+                        <th>Feature</th>
+                        <th>Kubernetes</th>
+                        <th>Docker Swarm</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr>
+                        <td><strong>Complexity</strong></td>
+                        <td>Higher learning curve</td>
+                        <td>Simpler</td>
+                  </tr>
+                  <tr>
+                        <td><strong>Scalability</strong></td>
+                        <td>Handles 1000s of nodes</td>
+                        <td>Good for smaller clusters</td>
+                  </tr>
+                  <tr>
+                        <td><strong>Ecosystem</strong></td>
+                        <td>Massive (CNCF)</td>
+                        <td>Docker-focused</td>
+                  </tr>
+                  <tr>
+                        <td><strong>Production Ready</strong></td>
+                        <td>Industry standard</td>
+                        <td>Good for simple use cases</td>
+                  </tr>
+                  <tr>
+                        <td><strong>Best For</strong></td>
+                        <td>Enterprise, complex apps</td>
+                        <td>Small teams, simple apps</td>
+                  </tr>
+            </tbody>
+      </table>
+      <p><strong>Verdict:</strong> Kubernetes wins for production-scale deployments.</p>
+      <h3 id="kubernetes-vs-virtual-machines">Kubernetes vs Virtual Machines </h3>
+      <table>
+            <thead>
+                  <tr>
+                        <th>Feature</th>
+                        <th>Kubernetes</th>
+                        <th>VMs</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr>
+                        <td><strong>Resource Usage</strong></td>
+                        <td>Lightweight (containers)</td>
+                        <td>Heavy (full OS)</td>
+                  </tr>
+                  <tr>
+                        <td><strong>Startup Time</strong></td>
+                        <td>Seconds</td>
+                        <td>Minutes</td>
+                  </tr>
+                  <tr>
+                        <td><strong>Isolation</strong></td>
+                        <td>Process-level</td>
+                        <td>Full OS-level</td>
+                  </tr>
+                  <tr>
+                        <td><strong>Orchestration</strong></td>
+                        <td>Built-in</td>
+                        <td>Requires tools</td>
+                  </tr>
+                  <tr>
+                        <td><strong>Best For</strong></td>
+                        <td>Microservices, cloud-native</td>
+                        <td>Legacy apps, full OS needed</td>
+                  </tr>
+            </tbody>
+      </table>
+      <p><strong>Verdict:</strong> Kubernetes is better for modern, cloud-native applications.</p>
+      <h3 id="kubernetes-vs-managed-services">Kubernetes vs Managed Services </h3>
+      <p><strong>Kubernetes (Self-Managed):</strong></p>
+      <ul>
+            <li>✅ Full control</li>
+            <li>✅ Cost-effective at scale</li>
+            <li>❌ You manage everything</li>
+            <li>❌ Steeper learning curve</li>
+      </ul>
+      <p><strong>Managed Kubernetes (GKE/EKS/AKS):</strong></p>
+      <ul>
+            <li>✅ Managed control plane</li>
+            <li>✅ Easier to get started</li>
+            <li>✅ Cloud integrations</li>
+            <li>❌ Less control</li>
+            <li>❌ Higher cost</li>
+      </ul>
+      <p><strong>Verdict:</strong> Start with managed, learn self-managed for advanced use cases.</p>
+      <hr>
+      <h2 id="-core-kubernetes-concepts-preview">🧠 Core Kubernetes Concepts (Preview) </h2>
+      <h3 id="1-pods">1. <strong>Pods</strong> </h3>
+      <p>The smallest deployable unit. Contains one or more containers.</p>
+      <h3 id="2-deployments">2. <strong>Deployments</strong> </h3>
+      <p>Manages Pod replicas. Handles rolling updates and rollbacks.</p>
+      <h3 id="3-services">3. <strong>Services</strong> </h3>
+      <p>Provides stable networking and load balancing for Pods.</p>
+      <h3 id="4-namespaces">4. <strong>Namespaces</strong> </h3>
+      <p>Logical separation of resources (like folders).</p>
+      <h3 id="5-configmaps--secrets">5. <strong>ConfigMaps &amp; Secrets</strong> </h3>
+      <p>Configuration and sensitive data management.</p>
+      <h3 id="6-volumes">6. <strong>Volumes</strong> </h3>
+      <p>Persistent storage for Pods.</p>
+      <hr>
+      <h2 id="-when-to-use-kubernetes">🎯 When to Use Kubernetes </h2>
+      <h3 id="-use-kubernetes-when">✅ Use Kubernetes When: </h3>
+      <ul>
+            <li>Running microservices architecture</li>
+            <li>Need high availability</li>
+            <li>Need auto-scaling</li>
+            <li>Managing many containers</li>
+            <li>Deploying to multiple environments</li>
+            <li>Need rolling updates</li>
+            <li>Building cloud-native applications</li>
+      </ul>
+      <h3 id="-dont-use-kubernetes-when">❌ Don't Use Kubernetes When: </h3>
+      <ul>
+            <li>Running a single simple application</li>
+            <li>Team lacks Kubernetes expertise</li>
+            <li>Overkill for your use case</li>
+            <li>Budget constraints (consider managed services)</li>
+      </ul>
+      <hr>
+      <h2 id="-kubernetes-adoption">📈 Kubernetes Adoption </h2>
+      <p><strong>Why Kubernetes is everywhere:</strong></p>
+      <ul>
+            <li>✅ Industry standard (CNCF project)</li>
+            <li>✅ Cloud provider support (GKE, EKS, AKS)</li>
+            <li>✅ Huge ecosystem</li>
+            <li>✅ Active community</li>
+            <li>✅ Production-proven at scale (Google, Netflix, etc.)</li>
+      </ul>
+      <hr>
+      <h2 id="-hands-on-lab-first-kubectl-commands">🧪 Hands-On Lab: First kubectl Commands </h2>
+      <h3 id="prerequisites">Prerequisites </h3>
+      <ul>
+            <li>Kubernetes cluster running (Minikube, Kind, or cloud)</li>
+            <li>kubectl installed</li>
+      </ul>
+      <h3 id="lab-1-check-cluster-status">Lab 1: Check Cluster Status </h3>
+      <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Check cluster nodes</span>
 kubectl get nodes
 
 <span class="token comment"># Expected output:</span>
@@ -1150,8 +1153,8 @@ kubectl cluster-info
 <span class="token comment"># Check Kubernetes version</span>
 kubectl version <span class="token parameter variable">--client</span>
 </code></pre>
-            <h3 id="lab-2-explore-default-resources">Lab 2: Explore Default Resources </h3>
-            <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># List all namespaces</span>
+      <h3 id="lab-2-explore-default-resources">Lab 2: Explore Default Resources </h3>
+      <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># List all namespaces</span>
 kubectl get namespaces
 <span class="token comment"># or</span>
 kubectl get ns
@@ -1162,8 +1165,8 @@ kubectl get pods
 <span class="token comment"># List all resources in cluster</span>
 kubectl get all --all-namespaces
 </code></pre>
-            <h3 id="lab-3-create-your-first-pod">Lab 3: Create Your First Pod </h3>
-            <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Run a simple nginx pod</span>
+      <h3 id="lab-3-create-your-first-pod">Lab 3: Create Your First Pod </h3>
+      <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Run a simple nginx pod</span>
 kubectl run nginx <span class="token parameter variable">--image</span><span class="token operator">=</span>nginx
 
 <span class="token comment"># Check pod status</span>
@@ -1178,32 +1181,32 @@ kubectl logs nginx
 <span class="token comment"># Delete pod</span>
 kubectl delete pod nginx
 </code></pre>
-            <hr>
-            <h2 id="-key-takeaways">🎓 Key Takeaways </h2>
-            <ol>
-                  <li><strong>Kubernetes orchestrates containers</strong> at scale</li>
-                  <li><strong>Docker runs containers</strong>, Kubernetes manages them</li>
-                  <li><strong>Control Plane</strong> makes decisions, <strong>Worker Nodes</strong> execute</li>
-                  <li><strong>Pods</strong> are the smallest deployable unit</li>
-                  <li>Kubernetes solves: scaling, HA, networking, updates, resource management</li>
-            </ol>
-            <hr>
-            <h2 id="-next-steps">🔗 Next Steps </h2>
-            <p>Now that you understand <strong>why Kubernetes exists</strong>, let's dive deep into <strong>how it
-                        works</strong>:</p>
-            <p>👉 <strong><a href="./ARCHITECTURE.md">Architecture Deep Dive</a></strong> - Control Plane, Worker Nodes,
-                  and Components</p>
-            <hr>
-            <h2 id="-additional-resources">📚 Additional Resources </h2>
-            <ul>
-                  <li><a href="https://kubernetes.io/docs/">Kubernetes Official Docs</a></li>
-                  <li><a href="https://github.com/kubernetes/kubernetes">Kubernetes GitHub</a></li>
-                  <li><a href="https://landscape.cncf.io/">CNCF Landscape</a></li>
-            </ul>
-            <hr>
-            <p><strong>Congratulations! You've completed Foundations. Ready to learn the architecture? 🚀</strong></p>
+      <hr>
+      <h2 id="-key-takeaways">🎓 Key Takeaways </h2>
+      <ol>
+            <li><strong>Kubernetes orchestrates containers</strong> at scale</li>
+            <li><strong>Docker runs containers</strong>, Kubernetes manages them</li>
+            <li><strong>Control Plane</strong> makes decisions, <strong>Worker Nodes</strong> execute</li>
+            <li><strong>Pods</strong> are the smallest deployable unit</li>
+            <li>Kubernetes solves: scaling, HA, networking, updates, resource management</li>
+      </ol>
+      <hr>
+      <h2 id="-next-steps">🔗 Next Steps </h2>
+      <p>Now that you understand <strong>why Kubernetes exists</strong>, let's dive deep into <strong>how it
+                  works</strong>:</p>
+      <p>👉 <strong><a href="./ARCHITECTURE.md">Architecture Deep Dive</a></strong> - Control Plane, Worker Nodes,
+            and Components</p>
+      <hr>
+      <h2 id="-additional-resources">📚 Additional Resources </h2>
+      <ul>
+            <li><a href="https://kubernetes.io/docs/">Kubernetes Official Docs</a></li>
+            <li><a href="https://github.com/kubernetes/kubernetes">Kubernetes GitHub</a></li>
+            <li><a href="https://landscape.cncf.io/">CNCF Landscape</a></li>
+      </ul>
+      <hr>
+      <p><strong>Congratulations! You've completed Foundations. Ready to learn the architecture? 🚀</strong></p>
 
-            </div>
+      </div>
 
 
 
